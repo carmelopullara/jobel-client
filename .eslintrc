@@ -1,0 +1,14 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "react/jsx-filename-extension": 0,
+        "arrow-body-style": 0,
+        "react-hooks/rules-of-hooks": "error"
+    },
+    "env": {
+        "browser": true
+    },
+    "plugins": [
+        "react-hooks"
+    ]
+}
