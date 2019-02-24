@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from 'context';
 
-const PrivateRoute = (props) => {
+const GuestRoute = (props) => {
   const { currentUser } = useContext(UserContext);
 
   if (currentUser) {
@@ -12,4 +12,4 @@ const PrivateRoute = (props) => {
   return <Route {...props} />;
 };
 
-export default PrivateRoute;
+export default GuestRoute;

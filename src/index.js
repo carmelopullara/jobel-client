@@ -23,9 +23,7 @@ const middlewareLink = new ApolloLink((operation, forward) => {
 
 const afterwareLink = new ApolloLink((operation, forward) => {
   return forward(operation).map((response) => {
-    const {
-      response: { headers },
-    } = operation.getContext();
+    const { response: { headers } } = operation.getContext();
     if (headers) {
       const token = headers.get('x-token');
       const refreshToken = headers.get('x-refresh-token');
