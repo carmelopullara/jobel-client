@@ -1,12 +1,10 @@
-import React, { useEffect, useContext } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
 import { useQuery } from 'react-apollo-hooks';
-import UserContext from '../contexts/UserContext';
-import { GET_CURRENT_USER } from '../queries/user';
-import Signup from './Auth/Signup';
-import Home from './Home';
-import GuestRoute from './Routes/GuestRoute';
-import PrivateRoute from './Routes/PrivateRoute';
+import { UserContext } from 'context';
+import { GET_CURRENT_USER } from 'queries/user';
+import Loading from 'components/Loading';
+import Routes from 'components/Routes';
+import GlobalStyle from 'styled/GlobalStyle';
 
 const App = () => {
   const { data, error, loading } = useQuery(GET_CURRENT_USER);
@@ -19,10 +17,10 @@ const App = () => {
         user: data.me,
       });
     }
-  }, [data]);
+  }, [data, dispatch]);
 
   if (loading) {
-    return <p>Loading....</p>;
+    return <Loading />;
   }
 
   if (error) {
@@ -30,13 +28,10 @@ const App = () => {
   }
 
   return (
-    <Router>
-      <Switch>
-        <PrivateRoute exact path="/" component={Home} />
-        <GuestRoute exact path="/signup" component={Signup} />
-        <Route render={() => <p>Not Found</p>} />
-      </Switch>
-    </Router>
+    <>
+      <GlobalStyle />
+      <Routes />
+    </>
   );
 };
 

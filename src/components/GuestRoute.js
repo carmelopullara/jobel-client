@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import UserContext from '../../contexts/UserContext';
+import { UserContext } from 'context';
 
 const PrivateRoute = (props) => {
   const { currentUser } = useContext(UserContext);
@@ -9,9 +9,7 @@ const PrivateRoute = (props) => {
     return <Redirect to="/" />;
   }
 
-  return (
-    <Route {...props} />
-  );
+  return <Route {...props} />;
 };
 
 export default PrivateRoute;
