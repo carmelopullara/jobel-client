@@ -4,7 +4,7 @@ import { UserContext } from 'context';
 import { GET_CURRENT_USER } from 'queries/user';
 import Loading from 'components/Loading';
 import Routes from 'components/Routes';
-import GlobalStyle from 'styled/GlobalStyle';
+import GlobalStyle from 'components/GlobalStyle';
 
 const App = () => {
   const { data, error, loading } = useQuery(GET_CURRENT_USER);

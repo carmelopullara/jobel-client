@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo-hooks';
 import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-boost';
 import { ApolloLink } from 'apollo-link';
+import { ThemeProvider } from 'styled-components';
 import 'normalize.css/normalize.css';
 import 'i18n';
 import { UserProvider } from 'context';
 import authReducer from 'reducers/authReducer';
 import App from 'components/App';
+import theme from 'styled/theme';
 
 const httpLink = new HttpLink({ uri: 'http://localhost:3001/graphql' });
 
@@ -55,7 +57,9 @@ const Root = () => {
   return (
     <UserProvider value={{ currentUser, dispatch }}>
       <ApolloProvider client={client}>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </ApolloProvider>
     </UserProvider>
   );

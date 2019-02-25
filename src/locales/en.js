@@ -1,3 +1,5 @@
 export default {
-  title: 'Welcome',
+  login: {
+    title: 'Welcome back',
+  },
 };

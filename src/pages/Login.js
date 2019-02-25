@@ -1,23 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { FullScreenSection } from 'styled/layout';
+import { AuthBlock } from 'styled/common';
+import LoginForm from 'components/LoginForm';
 
 const Login = () => {
-  const { t, i18n } = useTranslation();
-  const setLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-    localStorage.setItem('locale', lang);
-  };
-
+  const { t } = useTranslation();
   return (
-    <div>
-      <h1>{t('title')}</h1>
-      <button type="button" onClick={() => setLanguage('en')}>
-        en
-      </button>
-      <button type="button" onClick={() => setLanguage('it')}>
-        it
-      </button>
-    </div>
+    <FullScreenSection>
+      <AuthBlock>
+        <h2>{ t('login.title') }</h2>
+        <LoginForm />
+      </AuthBlock>
+    </FullScreenSection>
   );
 };
 
