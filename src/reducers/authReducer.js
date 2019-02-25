@@ -5,7 +5,11 @@ export default (state, action) => {
         currentUser: action.user,
         isLoading: false,
       };
-
+    case 'userNotLogged':
+      return {
+        currentUser: null,
+        isLoading: false,
+      };
     default:
       return state;
   }

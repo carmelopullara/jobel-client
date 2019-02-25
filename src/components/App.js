@@ -1,25 +1,15 @@
-import React, { useContext, useEffect } from 'react';
-import { useQuery } from 'react-apollo-hooks';
-import { UserContext } from 'context';
-import { GET_CURRENT_USER } from 'queries/user';
+import React, { useContext } from 'react';
 import Loading from 'components/Loading';
 import Routes from 'components/Routes';
 import GlobalStyle from 'components/GlobalStyle';
+import { useCurrentUser } from 'hooks';
+import { UserContext } from 'context';
 
 const App = () => {
-  const { data, error, loading } = useQuery(GET_CURRENT_USER);
-  const { dispatch } = useContext(UserContext);
+  const { isLoading } = useContext(UserContext);
+  const { error } = useCurrentUser();
 
-  useEffect(() => {
-    if (data.me) {
-      dispatch({
-        type: 'setCurrentUser',
-        user: data.me,
-      });
-    }
-  }, [data, dispatch]);
-
-  if (loading) {
+  if (isLoading) {
     return <Loading />;
   }
 

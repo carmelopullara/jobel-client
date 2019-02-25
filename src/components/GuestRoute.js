@@ -4,12 +4,7 @@ import { UserContext } from 'context';
 
 const GuestRoute = (props) => {
   const { currentUser } = useContext(UserContext);
-
-  if (currentUser) {
-    return <Redirect to="/" />;
-  }
-
-  return <Route {...props} />;
+  return currentUser ? <Redirect to="/" /> : <Route {...props} />;
 };
 
 export default GuestRoute;

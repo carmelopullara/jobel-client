@@ -4,19 +4,17 @@ import { Field, Input } from 'styled/form';
 import { useMutation } from 'react-apollo-hooks';
 import { LOGIN } from 'queries/user';
 import { UserContext } from 'context';
-import { useRouter } from 'hooks';
 
 const LoginForm = () => {
   const mutate = useMutation(LOGIN);
   const { dispatch } = useContext(UserContext);
-  const { history } = useRouter();
   return (
     <Formik
       initialValues={{
         email: '',
         password: '',
       }}
-      onSubmit={async ({ email, password }, actions) => {
+      onSubmit={({ email, password }, actions) => {
         const variables = { email, password };
         mutate({ variables })
           .then((result) => {
@@ -27,7 +25,7 @@ const LoginForm = () => {
               type: 'setCurrentUser',
               user: signIn.user,
             });
-            history.push('/');
+            // history.push('/');
           })
           .catch(error => console.log('ERROR', error));
       }}

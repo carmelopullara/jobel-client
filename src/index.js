@@ -52,10 +52,15 @@ const client = new ApolloClient({
 });
 
 const Root = () => {
-  const [{ currentUser }, dispatch] = useReducer(authReducer, { currentUser: null });
+  const initialState = {
+    currentUser: null,
+    isLoading: true,
+  };
+
+  const [{ currentUser, isLoading }, dispatch] = useReducer(authReducer, initialState);
 
   return (
-    <UserProvider value={{ currentUser, dispatch }}>
+    <UserProvider value={{ currentUser, isLoading, dispatch }}>
       <ApolloProvider client={client}>
         <ThemeProvider theme={theme}>
           <App />
