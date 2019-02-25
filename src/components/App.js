@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Loading from 'components/Loading';
 import Routes from 'components/Routes';
 import GlobalStyle from 'components/GlobalStyle';
-import { useCurrentUser } from 'hooks';
+import { useCurrentUser } from 'hooks/auth';
 import { UserContext } from 'context';
 
 const App = () => {

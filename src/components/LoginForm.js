@@ -1,33 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Formik } from 'formik';
 import { Field, Input } from 'styled/form';
-import { useMutation } from 'react-apollo-hooks';
-import { LOGIN } from 'queries/user';
-import { UserContext } from 'context';
+import { useLogin } from 'hooks/auth';
 
 const LoginForm = () => {
-  const mutate = useMutation(LOGIN);
-  const { dispatch } = useContext(UserContext);
+  const { submitLogin } = useLogin();
   return (
     <Formik
       initialValues={{
         email: '',
         password: '',
       }}
-      onSubmit={({ email, password }, actions) => {
-        const variables = { email, password };
-        mutate({ variables })
-          .then((result) => {
-            const { data: { signIn } } = result;
-            localStorage.setItem('token', signIn.token);
-            localStorage.setItem('refreshToken', signIn.refreshToken);
-            dispatch({
-              type: 'setCurrentUser',
-              user: signIn.user,
-            });
-            // history.push('/');
-          })
-          .catch(error => console.log('ERROR', error));
+      onSubmit={(values, actions) => {
+        submitLogin(values);
       }}
       render={({
         values,
