@@ -4,6 +4,7 @@ import { ApolloProvider } from 'react-apollo-hooks';
 import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-boost';
 import { ApolloLink } from 'apollo-link';
 import 'normalize.css/normalize.css';
+import 'i18n';
 import { UserProvider } from 'context';
 import authReducer from 'reducers/authReducer';
 import App from 'components/App';
