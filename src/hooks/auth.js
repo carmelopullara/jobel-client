@@ -10,11 +10,11 @@ export const useCurrentUser = () => {
   useEffect(() => {
     if (data.me) {
       dispatch({
-        type: 'setCurrentUser',
+        type: 'LOGIN_SUCCESS',
         user: data.me,
       });
     } else {
-      dispatch({ type: 'userNotLogged' });
+      dispatch({ type: 'LOGIN_FAIL' });
     }
   }, [data, dispatch]);
 
@@ -38,7 +38,7 @@ export const useLogin = () => {
         localStorage.setItem('token', signIn.token);
         localStorage.setItem('refreshToken', signIn.refreshToken);
         dispatch({
-          type: 'setCurrentUser',
+          type: 'LOGIN_SUCCESS',
           user: signIn.user,
         });
       })

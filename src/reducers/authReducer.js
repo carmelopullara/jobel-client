@@ -1,11 +1,11 @@
 export default (state, action) => {
   switch (action.type) {
-    case 'setCurrentUser':
+    case 'LOGIN_SUCCESS':
       return {
         currentUser: action.user,
         isLoading: false,
       };
-    case 'userNotLogged':
+    case 'LOGIN_FAIL':
       return {
         currentUser: null,
         isLoading: false,
