@@ -20,10 +20,18 @@ export const AuthHeader = styled.div`
 
 export const AuthFooter = styled.div`
   text-align: center;
+  margin-top: 1rem;
+  > p {
+    margin-top: 1rem;
+  }
   & a {
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
+    ${props => props.hasIcon && `
+      display: inline-flex;
+      align-items: center;
+    `}
+    strong{
+      font-weight: 500;
+    }
     & > svg{
       width: 1em;
       height: 1em;
@@ -57,11 +65,4 @@ export const Alert = styled.div`
     width: 1.2rem;
     margin-right: 0.4rem;
   }
-`;
-
-export const SmallLink = styled(Link)`
-  margin-top: 1rem;
-  display: block;
-  font-size: 0.95rem;
-  text-align: right;
 `;

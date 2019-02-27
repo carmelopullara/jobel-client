@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { darken } from 'polished';
 import CalibreRegular from 'assets/fonts/Calibre-Regular.woff';
 import CalibreRegular2 from 'assets/fonts/Calibre-Regular.woff2';
 import CalibreMedium from 'assets/fonts/Calibre-Medium.woff';
@@ -51,6 +52,14 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: ${props => props.theme.colors.primary};
+    &:hover{
+      color: ${props => darken(0.1, props.theme.colors.primary)};
+    }
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
   h1, h2, h3, h4, h5, h6 {

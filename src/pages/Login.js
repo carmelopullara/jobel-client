@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { FullScreenSection } from 'styled/layout';
 import {
-  AuthBlock, AuthHeader, AuthFooter, SmallLink,
+  AuthBlock, AuthHeader, AuthFooter,
 } from 'styled/common';
 import LoginForm from 'components/LoginForm';
 import Logo from 'components/Logo';
@@ -20,12 +20,12 @@ const Login = () => {
         </AuthHeader>
         <LoginForm />
         <AuthFooter>
-          <SmallLink to="/password/forgot">{t('login.forgot')}</SmallLink>
+          <Link to="/password/forgot">{t('login.forgot')}</Link>
           <p>
             {t('login.noAccount')}
             {' '}
             <Link to="/signup">
-              {t('signup.index')}
+              <strong>{t('signup.index')}</strong>
             </Link>
           </p>
         </AuthFooter>
