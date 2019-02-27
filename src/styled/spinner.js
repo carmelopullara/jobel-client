@@ -13,7 +13,7 @@ const Spinner = styled.div`
   width: 1em;
   height: 1em;
   display: inline-block;
-  border: 2px solid ${props => props.theme.colors.primary};
+  border: 2px solid ${props => (props.white ? '#fff' : props.theme.colors.primary)};
   border-left-color: transparent;
   border-radius: 50%;
   animation: ${rotate360} 1.2s linear infinite;

@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export const getColor = (props) => {
   if (props.danger) {
     return props.theme.colors.danger;
@@ -10,5 +11,3 @@ export const getColor = (props) => {
   }
   return props.theme.colors.primary;
 };
-
-export const foo = '';

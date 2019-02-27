@@ -2,7 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { FullScreenSection } from 'styled/layout';
-import { AuthBlock, AuthHeader, AuthFooter } from 'styled/common';
+import {
+  AuthBlock, AuthHeader, AuthFooter, SmallLink,
+} from 'styled/common';
 import LoginForm from 'components/LoginForm';
 import Logo from 'components/Logo';
 
@@ -18,6 +20,7 @@ const Login = () => {
         </AuthHeader>
         <LoginForm />
         <AuthFooter>
+          <SmallLink to="/password/forgot">{t('login.forgot')}</SmallLink>
           <p>
             {t('login.noAccount')}
             {' '}

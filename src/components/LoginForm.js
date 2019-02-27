@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
-import Alert from 'styled/alert';
+import { Alert } from 'styled/common';
 import { Field, Input } from 'styled/form';
 import { Button } from 'styled/button';
+import Spinner from 'styled/spinner';
 import { useLogin } from 'hooks/auth';
 import { useTranslation } from 'react-i18next';
 
@@ -80,7 +81,9 @@ const LoginForm = () => {
                 <span>{touched.password && errors.password}</span>
               </Field>
               <Button primary block large disabled={isSubmitting} type="submit">
-                Login
+                {
+                  isSubmitting ? <Spinner white /> : t('login.index')
+                }
               </Button>
             </form>
           </>

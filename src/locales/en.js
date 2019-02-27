@@ -12,6 +12,7 @@ export default {
     title: 'Sign in to Jobel',
     index: 'Login',
     noAccount: 'Don\'t have an account?',
+    forgot: 'Forgot your password?',
   },
   invalidCredentials: 'The email address or password you entered is incorrect',
 };
