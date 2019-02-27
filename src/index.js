@@ -57,10 +57,10 @@ const Root = () => {
     isLoading: true,
   };
 
-  const [{ currentUser, isLoading }, dispatch] = useReducer(authReducer, initialState);
-
+  const [state, dispatch] = useReducer(authReducer, initialState);
+  const value = { state, dispatch };
   return (
-    <UserProvider value={{ currentUser, isLoading, dispatch }}>
+    <UserProvider value={value}>
       <ApolloProvider client={client}>
         <ThemeProvider theme={theme}>
           <App />

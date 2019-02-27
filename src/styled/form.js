@@ -28,20 +28,20 @@ export const Input = styled.input`
   background-color: #fff;
   color: ${props => props.theme.colors.black};
   padding: ${props => (props.large ? '14px 24px' : '10px 14px')};
-  height: ${props => (props.large ? '50px' : '38px')};
+  height: ${props => (props.large ? '48px' : '38px')};
   border-width: 1px;
   border-style: solid;
-  border-color: ${props => (props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.06, props.theme.colors.gray))};
+  border-color: ${props => (props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.1, props.theme.colors.gray))};
   box-shadow: ${props => (props.shadow ? `2px 2px 10px ${fade(0.95, props.theme.colors.black)}` : '')};
   border-radius: 3px;
   width: 100%;
   transition: all .3s ease;
   outline: none;
   &:hover{
-    border-color: ${props => (props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.1, props.theme.colors.gray))};
-    box-shadow: ${props => (props.shadow ? `2px 2px 20px ${fade(0.92, props.theme.colors.black)}` : '')};
+    border-color: ${props => (props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.2, props.theme.colors.gray))};
   }
   &:focus{
     border-color: ${props => (props.hasError ? props.theme.colors.danger : props.theme.colors.primary)};
+    /* box-shadow: 0 0 0 1px ${props => props.theme.colors.primary}; */
   }
 `;

@@ -3,8 +3,8 @@ import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from 'context';
 
 const GuestRoute = (props) => {
-  const { currentUser } = useContext(UserContext);
-  return currentUser ? <Redirect to="/" /> : <Route {...props} />;
+  const { state } = useContext(UserContext);
+  return state.currentUser ? <Redirect to="/" /> : <Route {...props} />;
 };
 
 export default GuestRoute;

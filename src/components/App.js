@@ -6,7 +6,7 @@ import { useCurrentUser } from 'hooks/auth';
 import { UserContext } from 'context';
 
 const App = () => {
-  const { isLoading } = useContext(UserContext);
+  const { state: { isLoading } } = useContext(UserContext);
   const { error } = useCurrentUser();
 
   if (isLoading) {

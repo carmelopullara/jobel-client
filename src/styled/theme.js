@@ -1,10 +1,10 @@
 export default {
   colors: {
-    gray: '#f7f7fa',
+    gray: '#F7F7FA',
     black: '#1d1e21',
-    primary: '#246bfa',
+    primary: '#0079ff',
     warning: '#FFAF0F',
-    danger: '#ff295e',
+    danger: '#e3342f',
     success: '#2dd696',
     ghost: '#fff',
   },

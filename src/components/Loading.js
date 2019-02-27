@@ -1,19 +1,12 @@
 import React from 'react';
+import { FullScreenSection } from 'styled/layout';
+import Spinner from 'styled/spinner';
 
 const Loading = () => {
-  const style = {
-    display: 'flex',
-    height: '100vh',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#000',
-    color: '#fff',
-  };
-
   return (
-    <div style={style}>
-      loading...
-    </div>
+    <FullScreenSection>
+      <Spinner />
+    </FullScreenSection>
   );
 };
 

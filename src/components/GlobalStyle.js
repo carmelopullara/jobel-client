@@ -35,14 +35,22 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    font-size: 16px;
+  }
+
   body{
     font-family: 'Calibre', sans-serif;
     font-weight: 400;
-    font-size: 16px;
     color: ${props => props.theme.colors.black};
     line-height: 1.45;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.colors.primary};
   }
 
   h1, h2, h3, h4, h5, h6 {
