@@ -1,14 +1,7 @@
-import { useContext, useEffect } from 'react';
-import { UserContext } from '../context';
+/* eslint-disable import/prefer-default-export */
+import { useContext } from 'react';
+import { RouterContext } from 'context';
 
-export function useRemoveError() {
-  const { dispatch } = useContext(UserContext);
-  useEffect(() => {
-    dispatch({
-      type: 'SET_ERROR',
-      error: null,
-    });
-  }, [dispatch]);
-}
-
-export const foo = '';
+export const useRouter = () => {
+  return useContext(RouterContext);
+};

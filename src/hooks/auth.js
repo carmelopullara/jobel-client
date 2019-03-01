@@ -1,8 +1,8 @@
+/* eslint-disable object-curly-newline */
 import { useContext, useEffect } from 'react';
 import { useMutation, useQuery } from 'react-apollo-hooks';
 import { UserContext } from 'context';
-import { GET_CURRENT_USER, LOGIN } from 'gql';
-import { useTranslation } from 'react-i18next';
+import { GET_CURRENT_USER, LOGIN, SIGNUP } from 'schema/user';
 
 export const useCurrentUser = () => {
   const { data, error, loading } = useQuery(GET_CURRENT_USER);
@@ -36,6 +36,7 @@ export const useLogin = () => {
       const { email, password } = values;
       mutate({ variables: { email, password } }).then(
         (result) => {
+          // prettier-ignore
           const { data: { signIn } } = result;
           localStorage.setItem('token', signIn.token);
           localStorage.setItem('refreshToken', signIn.refreshToken);
@@ -56,4 +57,24 @@ export const useLogin = () => {
   return { submitLogin };
 };
 
-export const signUp = () => {};
+export const useSignup = () => {
+  const mutate = useMutation(SIGNUP);
+  const { submitLogin } = useLogin();
+
+  const submitSignup = (values, actions) => {
+    return new Promise((resolve, reject) => {
+      const { firstName, lastName, email, password } = values;
+
+      mutate({ variables: { firstName, lastName, email, password } })
+        .then(() => {
+          submitLogin({ email, password }, values);
+        })
+        .catch((error) => {
+          actions.setSubmitting(false);
+          reject(error.graphQLErrors[0].message);
+        });
+    });
+  };
+
+  return { submitSignup };
+};

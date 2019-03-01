@@ -3,39 +3,46 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
 import { Alert } from 'styled/common';
-import { Field, Input, Error } from 'styled/form';
+import {
+  Field, Input, DoubleField, Error,
+} from 'styled/form';
 import { Button } from 'styled/button';
 import Spinner from 'styled/spinner';
-import { useLogin } from 'hooks/auth';
+import { useSignup } from 'hooks/auth';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
 const validationSchema = yup.object().shape({
+  firstName: yup
+    .string()
+    .required('requiredEmpty'),
+  lastName: yup
+    .string(),
   email: yup
     .string()
     .email('invalidEmail')
-    .required(''),
+    .required('requiredEmpty'),
   password: yup
     .string()
-    .required('')
+    .required('requiredEmpty')
     .min(6, 'passwordLength'),
 });
 
-const LoginForm = () => {
+const SignupForm = () => {
   const [error, setError] = useState(null);
-  const { submitLogin } = useLogin();
+  const { submitSignup } = useSignup();
   const { t } = useTranslation();
 
   return (
     <Formik
       initialValues={{
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
       }}
-      validateOnChange={false}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
-        submitLogin(values, actions).catch(e => setError(e));
+        submitSignup(values, actions).catch(e => setError(e));
       }}
       render={({
         values,
@@ -45,24 +52,46 @@ const LoginForm = () => {
         handleBlur,
         handleSubmit,
         isSubmitting,
+        isValid,
       }) => {
         return (
           <>
             {error && (
               <Alert danger>
                 <AlertCircle />
-                <span>
-                  {t(error)}
-                  { error === 'emailNotVerified' && (
-                    <>
-                      <br />
-                      <Link to="/resend">{t('resendEmail')}</Link>
-                    </>
-                  )}
-                </span>
+                <span>{t(error)}</span>
               </Alert>
             )}
             <form onSubmit={handleSubmit}>
+              <DoubleField>
+                <Field>
+                  <Input
+                    type="text"
+                    name="firstName"
+                    placeholder={t('firstName')}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.firstName}
+                    hasError={touched.firstName && errors.firstName}
+                    required
+                    large
+                  />
+                  <Error>{touched.firstName && t(errors.firstName)}</Error>
+                </Field>
+                <Field>
+                  <Input
+                    type="text"
+                    name="lastName"
+                    placeholder={t('lastName')}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.lastName}
+                    hasError={touched.lastName && errors.lastName}
+                    large
+                  />
+                  <Error>{touched.lastName && t(errors.lastName)}</Error>
+                </Field>
+              </DoubleField>
               <Field>
                 <Input
                   type="email"
@@ -91,8 +120,8 @@ const LoginForm = () => {
                 />
                 <Error>{touched.password && t(errors.password)}</Error>
               </Field>
-              <Button primary block large disabled={isSubmitting} type="submit">
-                { isSubmitting ? <Spinner white /> : t('login.index') }
+              <Button primary block large disabled={isSubmitting || !isValid} type="submit">
+                {isSubmitting ? <Spinner white /> : t('getStartedFree')}
               </Button>
             </form>
           </>
@@ -102,4 +131,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignupForm;

@@ -38,10 +38,19 @@ export const Input = styled.input`
   transition: all .3s ease;
   outline: none;
   &:hover{
-    border-color: ${props => (props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.2, props.theme.colors.gray))};
+    border-color: ${props => (props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.15, props.theme.colors.gray))};
   }
   &:focus{
     border-color: ${props => (props.hasError ? props.theme.colors.danger : props.theme.colors.primary)};
-    /* box-shadow: 0 0 0 1px ${props => props.theme.colors.primary}; */
+  }
+`;
+
+export const Error = styled.span`
+  color: ${props => props.theme.colors.danger};
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  &:empty{
+    margin-top: 0;
   }
 `;

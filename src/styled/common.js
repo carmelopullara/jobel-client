@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { transparentize as fade, darken } from 'polished';
 import { getColor } from 'styled/utils';
 
@@ -14,7 +13,7 @@ export const AuthHeader = styled.div`
   text-align: center;
   margin-bottom: 1.5rem;
   > svg {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 `;
 
@@ -64,5 +63,13 @@ export const Alert = styled.div`
     height: 1.2em;
     width: 1.2rem;
     margin-right: 0.4rem;
+  }
+  a {
+    text-decoration: underline;
+    font-weight: 500;
+    color: ${props => darken(0.1, getColor(props))};
+    &:hover{
+      color: ${props => darken(0.15, getColor(props))};
+    }
   }
 `;

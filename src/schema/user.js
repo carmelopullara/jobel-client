@@ -21,3 +21,12 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const SIGNUP = gql`
+  mutation SignUp($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
+    signUp(firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
+      id
+      email
+    }
+  }
+`;

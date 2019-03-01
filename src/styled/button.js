@@ -1,7 +1,6 @@
-/* eslint-disable implicit-arrow-linebreak */
 import styled from 'styled-components';
 import { Link as A } from 'react-router-dom';
-import { transparentize as fade, lighten, darken } from 'polished';
+import { darken } from 'polished';
 import { getColor } from 'styled/utils';
 
 export const Link = styled(A)`
@@ -14,7 +13,7 @@ export const Link = styled(A)`
   width: ${props => (props.block ? '100%' : '')};
   color: #fff;
   background-color: ${props => getColor(props)};
-  box-shadow: inset 0 -1px 2px rgba(0,0,0,.1), 0 2px 4px 0 rgba(0,0,0,.1);
+  box-shadow: inset 0 -1px 2px rgba(0,0,0,.1);
   font-weight: 500;
   font-size: ${props => (props.large ? '16px' : '15px')};
   border: 0;
@@ -29,8 +28,11 @@ export const Link = styled(A)`
     background-color: ${props => darken(0.1, getColor(props))};
   }
   &[disabled]{
-    opacity: .7;
-    cursor: not-allowed;
+    opacity: .8;
+    cursor: default;
+    &:hover{
+      background-color: ${props => getColor(props)};
+    }
   }
   & > svg {
     display: inline-block;
