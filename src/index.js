@@ -55,6 +55,7 @@ const Root = () => {
   const initialState = {
     currentUser: null,
     isLoading: true,
+    company: null,
   };
 
   const [state, dispatch] = useReducer(authReducer, initialState);

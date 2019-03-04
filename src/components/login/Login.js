@@ -2,13 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { FullScreenSection } from 'styled/layout';
-import {
-  AuthBlock, AuthHeader, AuthFooter,
-} from 'styled/common';
-import SignupForm from 'components/SignupForm';
-import Logo from 'components/Logo';
+import { AuthBlock, AuthHeader, AuthFooter } from 'styled/common';
+import LoginForm from './LoginForm';
+import Logo from 'components/shared/Logo';
 
-const Signup = () => {
+const Login = () => {
   const { t } = useTranslation();
 
   return (
@@ -16,15 +14,16 @@ const Signup = () => {
       <AuthBlock>
         <AuthHeader>
           <Logo />
-          <h2>{t('signup.title')}</h2>
+          <h2>{t('login.title')}</h2>
         </AuthHeader>
-        <SignupForm />
+        <LoginForm />
         <AuthFooter>
+          <Link to="/password/forgot">{t('login.forgot')}</Link>
           <p>
-            {t('signup.alreadyDone')}
+            {t('login.noAccount')}
             {' '}
-            <Link to="/login">
-              <strong>{t('login.index')}</strong>
+            <Link to="/signup">
+              <strong>{t('signup.index')}</strong>
             </Link>
           </p>
         </AuthFooter>
@@ -33,4 +32,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

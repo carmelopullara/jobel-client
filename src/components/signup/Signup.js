@@ -5,10 +5,10 @@ import { FullScreenSection } from 'styled/layout';
 import {
   AuthBlock, AuthHeader, AuthFooter,
 } from 'styled/common';
-import LoginForm from 'components/LoginForm';
-import Logo from 'components/Logo';
+import SignupForm from 'components/signup/SignupForm';
+import Logo from 'components/shared/Logo';
 
-const Login = () => {
+const Signup = () => {
   const { t } = useTranslation();
 
   return (
@@ -16,16 +16,15 @@ const Login = () => {
       <AuthBlock>
         <AuthHeader>
           <Logo />
-          <h2>{t('login.title')}</h2>
+          <h2>{t('signup.title')}</h2>
         </AuthHeader>
-        <LoginForm />
+        <SignupForm />
         <AuthFooter>
-          <Link to="/password/forgot">{t('login.forgot')}</Link>
           <p>
-            {t('login.noAccount')}
+            {t('signup.alreadyDone')}
             {' '}
-            <Link to="/signup">
-              <strong>{t('signup.index')}</strong>
+            <Link to="/login">
+              <strong>{t('login.index')}</strong>
             </Link>
           </p>
         </AuthFooter>
@@ -34,4 +33,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

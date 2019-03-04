@@ -3,6 +3,7 @@ import { useContext, useEffect } from 'react';
 import { useMutation, useQuery } from 'react-apollo-hooks';
 import { UserContext } from 'context';
 import { GET_CURRENT_USER, LOGIN, SIGNUP } from 'schema/user';
+import { useRouter } from 'hooks/common';
 
 export const useCurrentUser = () => {
   const { data, error, loading } = useQuery(GET_CURRENT_USER);
@@ -60,6 +61,7 @@ export const useLogin = () => {
 export const useSignup = () => {
   const mutate = useMutation(SIGNUP);
   const { submitLogin } = useLogin();
+  const { history } = useRouter();
 
   const submitSignup = (values, actions) => {
     return new Promise((resolve, reject) => {
@@ -67,7 +69,7 @@ export const useSignup = () => {
 
       mutate({ variables: { firstName, lastName, email, password } })
         .then(() => {
-          submitLogin({ email, password }, values);
+          submitLogin({ email, password }, values).then(() => history.push('/signup/company'));
         })
         .catch((error) => {
           actions.setSubmitting(false);

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import Loading from 'components/Loading';
-import Routes from 'components/Routes';
-import GlobalStyle from 'components/GlobalStyle';
+import Loading from 'components/shared/Loading';
+import Routes from 'components/routes/Routes';
+import GlobalStyle from 'components/shared/GlobalStyle';
 import { useCurrentUser } from 'hooks/auth';
 import { UserContext } from 'context';
 
