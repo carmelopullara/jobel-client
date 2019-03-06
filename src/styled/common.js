@@ -1,19 +1,24 @@
 import styled from 'styled-components';
 import { transparentize as fade, darken } from 'polished';
 import { getColor } from 'styled/utils';
+import shapes from 'assets/images/sidebar-bg.svg';
 
 export const AuthBlock = styled.div`
-  width: 400px;
+  width: 450px;
   max-width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 45px 40px;
+  margin: auto;
+  background-color: #fff;
+  box-shadow: 0 18px 40px 10px ${props => fade(0.96, props.theme.colors.black)};
+  border-radius: 5px;
+  border-top: 2px solid ${props => props.theme.colors.primary};
 `;
 
 export const AuthHeader = styled.div`
   text-align: center;
   margin-bottom: 1.5rem;
   > svg {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -71,5 +76,26 @@ export const Alert = styled.div`
     &:hover{
       color: ${props => darken(0.15, getColor(props))};
     }
+  }
+`;
+
+export const Gradient = styled.div`
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+  min-height: 100vh;
+  background: ${props => `linear-gradient(180deg, ${props.theme.colors.primary}, ${darken(0.1, props.theme.colors.primary)})`};
+  &:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(${shapes});
+    background-size: 100%;
+    background-position: top center;
+    background-repeat: repeat;
+    opacity: .15;
   }
 `;

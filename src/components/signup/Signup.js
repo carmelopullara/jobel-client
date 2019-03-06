@@ -1,10 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { FullScreenSection } from 'styled/layout';
-import {
-  AuthBlock, AuthHeader, AuthFooter,
-} from 'styled/common';
+import { Flex } from 'styled/layout';
+import { AuthBlock, AuthHeader, AuthFooter } from 'styled/common';
 import SignupForm from 'components/signup/SignupForm';
 import Logo from 'components/shared/Logo';
 
@@ -12,11 +10,11 @@ const Signup = () => {
   const { t } = useTranslation();
 
   return (
-    <FullScreenSection>
+    <Flex alignItems="center" justifyContent="center" fullHeight>
       <AuthBlock>
         <AuthHeader>
           <Logo />
-          <h2>{t('signup.title')}</h2>
+          <h3>{t('signup.title')}</h3>
         </AuthHeader>
         <SignupForm />
         <AuthFooter>
@@ -29,7 +27,7 @@ const Signup = () => {
           </p>
         </AuthFooter>
       </AuthBlock>
-    </FullScreenSection>
+    </Flex>
   );
 };
 

@@ -43,6 +43,9 @@ export const Input = styled.input`
   &:focus{
     border-color: ${props => (props.hasError ? props.theme.colors.danger : props.theme.colors.primary)};
   }
+  & select{
+    appearance: none;
+  }
 `;
 
 export const Error = styled.span`

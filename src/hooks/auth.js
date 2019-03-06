@@ -55,7 +55,7 @@ export const useLogin = () => {
     });
   };
 
-  return { submitLogin };
+  return submitLogin;
 };
 
 export const useSignup = () => {

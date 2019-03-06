@@ -1,12 +1,12 @@
 import React from 'react';
-import { FullScreenSection } from 'styled/layout';
+import { Flex } from 'styled/layout';
 import Spinner from 'styled/spinner';
 
 const Loading = () => {
   return (
-    <FullScreenSection>
+    <Flex bg="#f7f8fa" alignItems="center" justifyContent="center" fullHeight>
       <Spinner />
-    </FullScreenSection>
+    </Flex>
   );
 };
 

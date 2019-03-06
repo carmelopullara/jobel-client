@@ -1,36 +1,33 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
 import * as yup from 'yup';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
 import { Alert } from 'styled/common';
 import { Field, Input, Error } from 'styled/form';
+import Select from 'styled/select';
 import { Button } from 'styled/button';
 import Spinner from 'styled/spinner';
 import { useLogin } from 'hooks/auth';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import countries from 'utils/countries.json';
 
 const validationSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email('invalidEmail')
-    .required('requiredEmpty'),
-  password: yup
-    .string()
-    .required('requiredEmpty')
-    .min(6, 'passwordLength'),
+  name: yup.string().required('requiredEmpty'),
+  website: yup.string().required('requiredEmpty'),
+  country: yup.string().required('requiredEmpty'),
 });
 
 const LoginForm = () => {
   const [error, setError] = useState(null);
-  const submitLogin = useLogin();
+  const { submitLogin } = useLogin();
   const { t } = useTranslation();
 
   return (
     <Formik
       initialValues={{
-        email: '',
-        password: '',
+        name: '',
+        website: '',
+        country: '',
       }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
@@ -51,48 +48,60 @@ const LoginForm = () => {
             {error && (
               <Alert danger>
                 <AlertCircle />
-                <span>
-                  {t(error)}
-                  { error === 'emailNotVerified' && (
-                    <>
-                      <br />
-                      <Link to="/resend">{t('resendEmail')}</Link>
-                    </>
-                  )}
-                </span>
+                <span>{t(error)}</span>
               </Alert>
             )}
             <form onSubmit={handleSubmit}>
               <Field>
                 <Input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
+                  type="text"
+                  name="name"
+                  placeholder={t('companyName')}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  value={values.email}
-                  hasError={touched.email && errors.email}
+                  value={values.name}
+                  hasError={touched.name && errors.name}
                   required
                   large
                 />
-                <Error>{touched.email && t(errors.email)}</Error>
+                <Error>{touched.name && t(errors.name)}</Error>
               </Field>
               <Field>
                 <Input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
+                  type="text"
+                  name="website"
+                  placeholder={t('companyWebsite')}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  value={values.password}
-                  hasError={touched.password && errors.password}
+                  value={values.website}
+                  hasError={touched.website && errors.website}
                   required
                   large
                 />
-                <Error>{touched.password && t(errors.password)}</Error>
+                <Error>{touched.website && t(errors.website)}</Error>
+              </Field>
+              <Field>
+                <Select
+                  name="country"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.country}
+                  hasError={touched.country && errors.country}
+                  required
+                  large
+                >
+                  <option value="">Country</option>
+                  {countries.map((country) => {
+                    return (
+                      <option key={country.code} value={country.code}>
+                        {country.name}
+                      </option>
+                    );
+                  })}
+                </Select>
               </Field>
               <Button primary block large disabled={!isValid || isSubmitting} type="submit">
-                { isSubmitting ? <Spinner white /> : t('login.index') }
+                {isSubmitting ? <Spinner white /> : t('startYourTrial')}
               </Button>
             </form>
           </>

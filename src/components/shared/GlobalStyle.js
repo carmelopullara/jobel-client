@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { darken } from 'polished';
+import { darken, lighten } from 'polished';
 import CalibreRegular from 'assets/fonts/Calibre-Regular.woff';
 import CalibreRegular2 from 'assets/fonts/Calibre-Regular.woff2';
 import CalibreMedium from 'assets/fonts/Calibre-Medium.woff';
@@ -43,7 +43,8 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'Calibre', sans-serif;
     font-weight: 400;
-    color: ${props => props.theme.colors.black};
+    color: ${props => lighten(0.25, props.theme.colors.black)};
+    background-color: ${props => props.theme.colors.gray};
     line-height: 1.45;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -69,6 +70,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     line-height: 1.2;
     color: inherit;
+    color: ${props => props.theme.colors.black};
   }
 
   h1 {

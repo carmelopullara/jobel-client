@@ -16,11 +16,12 @@ const validationSchema = yup.object().shape({
     .string()
     .required('requiredEmpty'),
   lastName: yup
-    .string(),
+    .string()
+    .required('requiredEmpty'),
   email: yup
     .string()
-    .email('invalidEmail')
-    .required('requiredEmpty'),
+    .required('requiredEmpty')
+    .email('invalidEmail'),
   password: yup
     .string()
     .required('requiredEmpty')
