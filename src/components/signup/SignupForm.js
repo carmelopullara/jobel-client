@@ -30,7 +30,7 @@ const validationSchema = yup.object().shape({
 
 const SignupForm = () => {
   const [error, setError] = useState(null);
-  const { submitSignup } = useSignup();
+  const submitSignup = useSignup();
   const { t } = useTranslation();
 
   return (

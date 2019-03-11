@@ -42,4 +42,5 @@ export default {
   emailNotVerified: 'This email address has not been verified yet.',
   resendEmail: 'Resend the confirmation email',
   emailAlreadyInUse: 'This email address is already in use',
+  invalidUrl: 'Invalid URL',
 };

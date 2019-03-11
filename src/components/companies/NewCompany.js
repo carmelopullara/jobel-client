@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
+import { UserContext } from 'context';
 import { Flex } from 'styled/layout';
 import { AuthBlock, AuthHeader, Alert } from 'styled/common';
-import NewCompanyForm from './NewCompanyForm';
 import Logo from 'components/shared/Logo';
-import { UserContext } from 'context';
+import NewCompanyForm from './NewCompanyForm';
 
 const NewCompany = () => {
   const { state: { currentUser } } = useContext(UserContext);
@@ -13,12 +13,14 @@ const NewCompany = () => {
       <AuthBlock>
         <AuthHeader>
           <Logo />
-          <h5>
-            {currentUser.firstName}
-            {' '}
-            {currentUser.lastName}
-          </h5>
-          <p>{currentUser.email}</p>
+          <>
+            <h5>
+              {currentUser.firstName}
+              {' '}
+              {currentUser.lastName}
+            </h5>
+            <p>{currentUser.email}</p>
+          </>
           <Alert warning>Awesome! Now tell us about your company.</Alert>
         </AuthHeader>
         <NewCompanyForm />

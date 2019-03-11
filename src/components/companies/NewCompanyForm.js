@@ -8,18 +8,18 @@ import { Field, Input, Error } from 'styled/form';
 import Select from 'styled/select';
 import { Button } from 'styled/button';
 import Spinner from 'styled/spinner';
-import { useLogin } from 'hooks/auth';
+import { useCompanySignup } from 'hooks/companies';
 import countries from 'utils/countries.json';
 
 const validationSchema = yup.object().shape({
   name: yup.string().required('requiredEmpty'),
-  website: yup.string().required('requiredEmpty'),
+  website: yup.string().url('invalidUrl'),
   country: yup.string().required('requiredEmpty'),
 });
 
 const LoginForm = () => {
   const [error, setError] = useState(null);
-  const { submitLogin } = useLogin();
+  const createCompany = useCompanySignup();
   const { t } = useTranslation();
 
   return (
@@ -31,7 +31,7 @@ const LoginForm = () => {
       }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
-        submitLogin(values, actions).catch(e => setError(e));
+        createCompany(values, actions).catch(e => setError(e));
       }}
       render={({
         values,
@@ -68,14 +68,13 @@ const LoginForm = () => {
               </Field>
               <Field>
                 <Input
-                  type="text"
+                  type="url"
                   name="website"
                   placeholder={t('companyWebsite')}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.website}
                   hasError={touched.website && errors.website}
-                  required
                   large
                 />
                 <Error>{touched.website && t(errors.website)}</Error>

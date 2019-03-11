@@ -35,9 +35,8 @@ export const useLogin = () => {
   const submitLogin = (values, actions) => {
     return new Promise((resolve, reject) => {
       const { email, password } = values;
-      mutate({ variables: { email, password } }).then(
-        (result) => {
-          // prettier-ignore
+      mutate({ variables: { email, password } })
+        .then((result) => {
           const { data: { signIn } } = result;
           localStorage.setItem('token', signIn.token);
           localStorage.setItem('refreshToken', signIn.refreshToken);
@@ -46,12 +45,11 @@ export const useLogin = () => {
             user: signIn.user,
           });
           resolve();
-        },
-        (error) => {
+        })
+        .catch((error) => {
           actions.setSubmitting(false);
           reject(error.graphQLErrors[0].message);
-        },
-      );
+        });
     });
   };
 
@@ -60,7 +58,7 @@ export const useLogin = () => {
 
 export const useSignup = () => {
   const mutate = useMutation(SIGNUP);
-  const { submitLogin } = useLogin();
+  const submitLogin = useLogin();
   const { history } = useRouter();
 
   const submitSignup = (values, actions) => {
@@ -78,5 +76,5 @@ export const useSignup = () => {
     });
   };
 
-  return { submitSignup };
+  return submitSignup;
 };
