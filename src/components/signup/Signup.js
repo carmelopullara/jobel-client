@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Flex } from 'styled/layout';
-import { AuthBlock, AuthHeader, AuthFooter } from 'styled/common';
+import { AuthBlock, AuthHeader, AuthFooter, Card } from 'styled/common';
 import SignupForm from 'components/signup/SignupForm';
 import Logo from 'components/shared/Logo';
 
@@ -12,11 +12,13 @@ const Signup = () => {
   return (
     <Flex alignItems="center" justifyContent="center" fullHeight>
       <AuthBlock>
-        <AuthHeader>
-          <Logo />
-          <h3>{t('signup.title')}</h3>
-        </AuthHeader>
-        <SignupForm />
+        <Logo />
+        <Card>
+          <AuthHeader>
+            <h3>{t('signup.title')}</h3>
+          </AuthHeader>
+          <SignupForm />
+        </Card>
         <AuthFooter>
           <p>
             {t('signup.alreadyDone')}

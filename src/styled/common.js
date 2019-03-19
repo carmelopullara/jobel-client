@@ -6,27 +6,25 @@ import shapes from 'assets/images/sidebar-bg.svg';
 export const AuthBlock = styled.div`
   width: 450px;
   max-width: 100%;
-  padding: 45px 40px;
   margin: auto;
-  background-color: #fff;
-  box-shadow: 0 18px 40px 10px ${props => fade(0.96, props.theme.colors.black)};
-  border-radius: 5px;
-  border-top: 2px solid ${props => props.theme.colors.primary};
+  > svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+  }
 `;
 
 export const AuthHeader = styled.div`
   text-align: center;
-  margin-bottom: 1.5rem;
-  > svg {
-    margin-bottom: 1.5rem;
-  }
+  margin-bottom: 2rem;
 `;
 
 export const AuthFooter = styled.div`
   text-align: center;
   margin-top: 1rem;
   > p {
-    margin-top: 1rem;
+    margin-top: .5rem;
   }
   & a {
     ${props => props.hasIcon && `
@@ -49,6 +47,10 @@ export const AuthFooter = styled.div`
 
 export const Card = styled.div`
   background-color: #fff;
+  padding: 55px 45px;
+  box-shadow: 0 0 0 0.65px rgba(14,20,26,0.04), 0 1.65px 8px -2px rgba(14,20,26,0.18);
+  border-radius: 4px;
+  margin-bottom: 2rem;
 `;
 
 export const Alert = styled.div`

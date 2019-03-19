@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Flex } from 'styled/layout';
 import {
-  AuthBlock, AuthHeader, AuthFooter,
+  AuthBlock, AuthHeader, AuthFooter, Card
 } from 'styled/common';
 import LoginForm from './LoginForm';
 import Logo from 'components/shared/Logo';
@@ -14,11 +14,13 @@ const Login = () => {
   return (
     <Flex alignItems="center" justifyContent="center" fullHeight>
       <AuthBlock>
-        <AuthHeader>
-          <Logo />
-          <h3>{t('login.title')}</h3>
-        </AuthHeader>
-        <LoginForm />
+        <Logo />
+        <Card>
+          <AuthHeader>
+            <h3>{t('login.title')}</h3>
+          </AuthHeader>
+          <LoginForm />
+        </Card>
         <AuthFooter>
           <Link to="/password/forgot">{t('login.forgot')}</Link>
           <p>

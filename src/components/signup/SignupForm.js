@@ -121,7 +121,7 @@ const SignupForm = () => {
                 />
                 <Error>{touched.password && t(errors.password)}</Error>
               </Field>
-              <Button primary block large disabled={isSubmitting || !isValid} type="submit">
+              <Button primary block large disabled={isSubmitting} type="submit">
                 {isSubmitting ? <Spinner white /> : t('getStartedFree')}
               </Button>
             </form>

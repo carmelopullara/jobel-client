@@ -6,6 +6,8 @@ export const Flex = styled.div`
   align-items: ${props => props.alignItems};
   justify-content: ${props => props.justifyContent};
   min-height: ${props => (props.fullHeight ? '100vh' : '')};
+  padding-top: ${props => (props.fullHeight ? '40px' : '')};
+  padding-bottom: ${props => (props.fullHeight ? '40px' : '')};
   background-color: ${props => props.bg};
 `;
 

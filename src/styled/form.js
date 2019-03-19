@@ -48,6 +48,13 @@ export const Input = styled.input`
   }
 `;
 
+export const Label = styled.label`
+  font-size: 14px;
+  font-weight: 500;
+  color: ${props => props.theme.colors.black};
+  margin-top: 0;
+`;
+
 export const Error = styled.span`
   color: ${props => props.theme.colors.danger};
   display: block;

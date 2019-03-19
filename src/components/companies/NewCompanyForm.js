@@ -99,7 +99,7 @@ const LoginForm = () => {
                   })}
                 </Select>
               </Field>
-              <Button primary block large disabled={!isValid || isSubmitting} type="submit">
+              <Button primary block large disabled={isSubmitting} type="submit">
                 {isSubmitting ? <Spinner white /> : t('startYourTrial')}
               </Button>
             </form>

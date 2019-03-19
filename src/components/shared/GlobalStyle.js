@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'Calibre', sans-serif;
     font-weight: 400;
-    color: ${props => lighten(0.25, props.theme.colors.black)};
+    color: #33333A;
     background-color: ${props => props.theme.colors.gray};
     line-height: 1.45;
     -webkit-font-smoothing: antialiased;
