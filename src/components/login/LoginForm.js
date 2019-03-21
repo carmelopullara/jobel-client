@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
-import { Alert } from 'styled/common';
+import { Alert, PasswordLink } from 'styled/common';
 import { Field, Input, Error } from 'styled/form';
 import { Button } from 'styled/button';
 import Spinner from 'styled/spinner';
@@ -93,7 +93,7 @@ const LoginForm = () => {
               <Button primary block large disabled={isSubmitting} type="submit">
                 { isSubmitting ? <Spinner white /> : t('login.index') }
               </Button>
-              <Link to="/password/forgot">{t('login.forgot')}</Link>
+              <PasswordLink to="/password/forgot">{t('login.forgot')}</PasswordLink>
             </form>
           </>
         );

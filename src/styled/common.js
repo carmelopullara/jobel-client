@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { transparentize as fade, darken } from 'polished';
+import { Link } from 'react-router-dom';
 import { getColor } from 'styled/utils';
 import shapes from 'assets/images/sidebar-bg.svg';
 
 export const AuthBlock = styled.div`
-  width: 400px;
+  width: 450px;
   max-width: 100%;
   margin: auto;
   > svg {
@@ -92,4 +93,12 @@ export const Gradient = styled.div`
     background-repeat: repeat;
     opacity: .15;
   }
+`;
+
+export const PasswordLink = styled(Link)`
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 1rem;
 `;

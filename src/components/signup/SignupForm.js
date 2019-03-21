@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
 import { Alert } from 'styled/common';
-import { Field, Input, Error } from 'styled/form';
+import { Field, Input, Error, DoubleField } from 'styled/form';
 import { Button } from 'styled/button';
 import Spinner from 'styled/spinner';
 import { useSignup } from 'hooks/auth';
@@ -57,33 +57,35 @@ const SignupForm = () => {
               </Alert>
             )}
             <form onSubmit={handleSubmit}>
-              <Field>
-                <Input
-                  type="text"
-                  name="firstName"
-                  placeholder={t('firstName')}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.firstName}
-                  hasError={touched.firstName && errors.firstName}
-                  required
-                  large
-                />
-                <Error>{touched.firstName && t(errors.firstName)}</Error>
-              </Field>
-              <Field>
-                <Input
-                  type="text"
-                  name="lastName"
-                  placeholder={t('lastName')}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.lastName}
-                  hasError={touched.lastName && errors.lastName}
-                  large
-                />
-                <Error>{touched.lastName && t(errors.lastName)}</Error>
-              </Field>
+              <DoubleField>
+                <Field>
+                  <Input
+                    type="text"
+                    name="firstName"
+                    placeholder={t('firstName')}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.firstName}
+                    hasError={touched.firstName && errors.firstName}
+                    required
+                    large
+                  />
+                  <Error>{touched.firstName && t(errors.firstName)}</Error>
+                </Field>
+                <Field>
+                  <Input
+                    type="text"
+                    name="lastName"
+                    placeholder={t('lastName')}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.lastName}
+                    hasError={touched.lastName && errors.lastName}
+                    large
+                  />
+                  <Error>{touched.lastName && t(errors.lastName)}</Error>
+                </Field>
+              </DoubleField>
               <Field>
                 <Input
                   type="email"

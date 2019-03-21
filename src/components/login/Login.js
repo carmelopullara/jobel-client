@@ -22,7 +22,6 @@ const Login = () => {
             <LoginForm />
           </Card.Body>
           <Card.Footer>
-            {/* <Link to="/password/forgot">{t('login.forgot')}</Link> */}
             <p>
               {t('login.noAccount')}
               {' '}
