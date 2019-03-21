@@ -44,7 +44,6 @@ const LoginForm = () => {
         handleBlur,
         handleSubmit,
         isSubmitting,
-        isValid,
       }) => {
         return (
           <>
@@ -94,6 +93,7 @@ const LoginForm = () => {
               <Button primary block large disabled={isSubmitting} type="submit">
                 { isSubmitting ? <Spinner white /> : t('login.index') }
               </Button>
+              <Link to="/password/forgot">{t('login.forgot')}</Link>
             </form>
           </>
         );

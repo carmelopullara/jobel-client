@@ -32,7 +32,6 @@ export const Input = styled.input`
   border-width: 1px;
   border-style: solid;
   border-color: ${props => (props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.1, props.theme.colors.gray))};
-  box-shadow: ${props => (props.shadow ? `2px 2px 10px ${fade(0.95, props.theme.colors.black)}` : '')};
   border-radius: 3px;
   width: 100%;
   transition: all .3s ease;
@@ -41,7 +40,7 @@ export const Input = styled.input`
     border-color: ${props => (props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.15, props.theme.colors.gray))};
   }
   &:focus{
-    border-color: ${props => (props.hasError ? props.theme.colors.danger : props.theme.colors.primary)};
+    box-shadow: 0 0 0 2px ${props => fade(0.75, props.theme.colors.primary)};
   }
   & select{
     appearance: none;
@@ -49,10 +48,11 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.label`
+  display: block;
   font-size: 14px;
   font-weight: 500;
   color: ${props => props.theme.colors.black};
-  margin-top: 0;
+  margin: 0 0 10px;
 `;
 
 export const Error = styled.span`

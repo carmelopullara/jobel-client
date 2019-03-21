@@ -1,11 +1,12 @@
 export default {
   colors: {
-    gray: '#f7f8fa',
-    black: '#0f2142',
-    primary: '#0079ff',
+    gray: '#f8f9fa',
+    black: '#2a2f45',
+    primary: '#4f6df5',
     warning: '#FFAF0F',
-    danger: '#e3342f',
+    danger: '#c3375d',
     success: '#2dd696',
+    info: '#00aeef',
     ghost: '#fff',
   },
 };

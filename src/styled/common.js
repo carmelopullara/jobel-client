@@ -4,7 +4,7 @@ import { getColor } from 'styled/utils';
 import shapes from 'assets/images/sidebar-bg.svg';
 
 export const AuthBlock = styled.div`
-  width: 450px;
+  width: 400px;
   max-width: 100%;
   margin: auto;
   > svg {
@@ -45,19 +45,11 @@ export const AuthFooter = styled.div`
   }
 `;
 
-export const Card = styled.div`
-  background-color: #fff;
-  padding: 55px 45px;
-  box-shadow: 0 0 0 0.65px rgba(14,20,26,0.04), 0 1.65px 8px -2px rgba(14,20,26,0.18);
-  border-radius: 4px;
-  margin-bottom: 2rem;
-`;
-
 export const Alert = styled.div`
   display: flex;
   align-items: center;
   background-color: ${props => fade(0.9, getColor(props))};
-  border: 1px solid ${props => fade(0.85, getColor(props))};
+  border: 1px solid ${props => fade(0.87, getColor(props))};
   border-left-color: ${props => getColor(props)};
   color: ${props => darken(0.1, getColor(props))};
   border-left-width: 3px;

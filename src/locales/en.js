@@ -9,7 +9,7 @@ export default {
     weakPassword: 'Password should be at least 6 characters',
   },
   login: {
-    index: 'Login',
+    index: 'Sign in',
     title: 'Sign in to Jobel',
     noAccount: 'Don\'t have an account?',
     forgot: 'Forgot your password?',

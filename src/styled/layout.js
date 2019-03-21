@@ -6,8 +6,8 @@ export const Flex = styled.div`
   align-items: ${props => props.alignItems};
   justify-content: ${props => props.justifyContent};
   min-height: ${props => (props.fullHeight ? '100vh' : '')};
-  padding-top: ${props => (props.fullHeight ? '40px' : '')};
-  padding-bottom: ${props => (props.fullHeight ? '40px' : '')};
+  padding-top: ${props => (props.fullHeight ? '60px' : '')};
+  padding-bottom: ${props => (props.fullHeight ? '60px' : '')};
   background-color: ${props => props.bg};
 `;
 
@@ -17,19 +17,27 @@ export const Box = styled.div`
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  flex: 0 0 ${props => 100 / 12 * props.col}%;
-  max-width: ${props => 100 / 12 * props.col}%;
+  ${props => props.col && `
+    flex: 0 0 ${100 / 12 * props.col}%;
+    max-width: ${100 / 12 * props.col}%;
+  `}
   @media(min-width: 544px) {
-    flex: 0 0 ${props => 100 / 12 * props.sm}%;
-    max-width: ${props => 100 / 12 * props.sm}%;
+    ${props => props.sm && `
+      flex: 0 0 ${100 / 12 * props.sm}%;
+      max-width: ${100 / 12 * props.sm}%;
+    `}
   }
   @media(min-width: 768px) {
-    flex: 0 0 ${props => 100 / 12 * props.md}%;
-    max-width: ${props => 100 / 12 * props.md}%;
+    ${props => props.md && `
+      flex: 0 0 ${100 / 12 * props.md}%;
+      max-width: ${100 / 12 * props.md}%;
+    `}
   }
   @media(min-width: 992px) {
-    flex: 0 0 ${props => 100 / 12 * props.lg}%;
-    max-width: ${props => 100 / 12 * props.lg}%;
+    ${props => props.lg && `
+      flex: 0 0 ${100 / 12 * props.lg}%;
+      max-width: ${100 / 12 * props.lg}%;
+    `}
   }
 `;
 

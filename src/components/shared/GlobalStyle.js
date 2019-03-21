@@ -54,11 +54,11 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: ${props => props.theme.colors.primary};
     &:hover{
-      color: ${props => darken(0.1, props.theme.colors.primary)};
+      color: ${props => darken(0.15, props.theme.colors.primary)};
     }
   }
 
-  p {
+  p{
     margin-top: 0;
     margin-bottom: 1rem;
   }

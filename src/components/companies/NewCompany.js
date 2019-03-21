@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { UserContext } from 'context';
 import { Flex } from 'styled/layout';
-import {
-  AuthBlock, AuthHeader, Alert, Card,
-} from 'styled/common';
+import { AuthBlock, Alert } from 'styled/common';
+import Card from 'styled/card';
 import Logo from 'components/shared/Logo';
 import NewCompanyForm from './NewCompanyForm';
 
@@ -17,7 +16,7 @@ const NewCompany = () => {
       <AuthBlock>
         <Logo />
         <Card>
-          <AuthHeader>
+          <Card.Header>
             <>
               <h5>
                 {currentUser.firstName}
@@ -26,9 +25,11 @@ const NewCompany = () => {
               </h5>
               <p>{currentUser.email}</p>
             </>
+          </Card.Header>
+          <Card.Body>
             <Alert warning>Awesome! Now tell us about your company.</Alert>
-          </AuthHeader>
-          <NewCompanyForm />
+            <NewCompanyForm />
+          </Card.Body>
         </Card>
       </AuthBlock>
     </Flex>

@@ -1,14 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
+import LogoImg from 'assets/images/logotype.svg';
+
+const LogoWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 1.8rem;
+  img {
+    max-width: 45px;
+  }
+`;
 
 const Logo = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
-      <path
-        fill="#246BFA"
-        fillRule="evenodd"
-        d="M.652 18.431c-.87.87-.87 2.269 0 3.138l17.78 17.78c.868.868 2.268.868 3.137 0l2.614-2.615L20 32.55l-4.183-4.183-4.184-4.184-3.399-3.399a1.107 1.107 0 0 1 0-1.568l3.4-3.4 4.183-4.183 3.399-3.399a1.107 1.107 0 0 1 1.568 0l3.4 3.4 4.183 4.183L24.183 20 20 15.817 15.817 20 20 24.183l4.183 4.184 4.184 4.183L39.348 21.57c.87-.87.87-2.269 0-3.138L21.568.651a2.214 2.214 0 0 0-3.137 0L.651 18.432z"
-      />
-    </svg>
+    <LogoWrapper>
+      <img src={LogoImg} alt="Jobel" />
+    </LogoWrapper>
   );
 };
 

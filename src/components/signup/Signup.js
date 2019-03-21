@@ -2,7 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Flex } from 'styled/layout';
-import { AuthBlock, AuthHeader, AuthFooter, Card } from 'styled/common';
+import { AuthBlock } from 'styled/common';
+import Card from 'styled/card';
 import SignupForm from 'components/signup/SignupForm';
 import Logo from 'components/shared/Logo';
 
@@ -14,20 +15,23 @@ const Signup = () => {
       <AuthBlock>
         <Logo />
         <Card>
-          <AuthHeader>
-            <h3>{t('signup.title')}</h3>
-          </AuthHeader>
-          <SignupForm />
+          <Card.Header>
+            <h4>{t('signup.title')}</h4>
+          </Card.Header>
+          <Card.Body>
+            <SignupForm />
+          </Card.Body>
+          <Card.Footer>
+            <p>
+              {t('signup.alreadyDone')}
+              {' '}
+              <Link to="/login">
+                <strong>{t('login.index')}</strong>
+                .
+              </Link>
+            </p>
+          </Card.Footer>
         </Card>
-        <AuthFooter>
-          <p>
-            {t('signup.alreadyDone')}
-            {' '}
-            <Link to="/login">
-              <strong>{t('login.index')}</strong>
-            </Link>
-          </p>
-        </AuthFooter>
       </AuthBlock>
     </Flex>
   );

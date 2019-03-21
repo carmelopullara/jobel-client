@@ -2,9 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Flex } from 'styled/layout';
-import {
-  AuthBlock, AuthHeader, AuthFooter, Card
-} from 'styled/common';
+import { AuthBlock } from 'styled/common';
+import Card from 'styled/card';
 import LoginForm from './LoginForm';
 import Logo from 'components/shared/Logo';
 
@@ -16,21 +15,23 @@ const Login = () => {
       <AuthBlock>
         <Logo />
         <Card>
-          <AuthHeader>
-            <h3>{t('login.title')}</h3>
-          </AuthHeader>
-          <LoginForm />
+          <Card.Header>
+            <h4>{t('login.title')}</h4>
+          </Card.Header>
+          <Card.Body>
+            <LoginForm />
+          </Card.Body>
+          <Card.Footer>
+            {/* <Link to="/password/forgot">{t('login.forgot')}</Link> */}
+            <p>
+              {t('login.noAccount')}
+              {' '}
+              <Link to="/signup">
+                <strong>{t('signup.index')}</strong>
+              </Link>
+            </p>
+          </Card.Footer>
         </Card>
-        <AuthFooter>
-          <Link to="/password/forgot">{t('login.forgot')}</Link>
-          <p>
-            {t('login.noAccount')}
-            {' '}
-            <Link to="/signup">
-              <strong>{t('signup.index')}</strong>
-            </Link>
-          </p>
-        </AuthFooter>
       </AuthBlock>
     </Flex>
   );
