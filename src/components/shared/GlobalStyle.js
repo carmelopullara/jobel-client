@@ -69,8 +69,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: inherit;
     font-weight: 500;
     line-height: 1.2;
-    color: inherit;
     color: ${props => props.theme.colors.black};
+    letter-spacing: -0.03rem;
   }
 
   h1 {

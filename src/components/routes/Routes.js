@@ -15,6 +15,7 @@ const Routes = () => {
       <Switch>
         <GuestRoute exact path="/signup" component={Signup} />
         <GuestRoute exact path="/login" component={Login} />
+        <GuestRoute exact path="/password/forgot" component={Login} />
         <PrivateRoute exact path="/signup/company" component={SignupCompany} />
 
         <PrivateRoute exact path="/" component={Home} />

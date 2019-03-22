@@ -57,7 +57,7 @@ export const Alert = styled.div`
   padding: 10px 16px;
   border-radius: 3px;
   margin: 1rem 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   & > svg {
     color: ${props => darken(0.1, getColor(props))};
     height: 1.2em;
