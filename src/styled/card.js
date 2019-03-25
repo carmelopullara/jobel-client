@@ -5,8 +5,8 @@ import { Alert } from 'styled/common';
 const Card = styled.div`
   position: relative;
   background-color: #fff;
-  border: 1px solid ${props => darken(0.06, props.theme.colors.gray)};
-  box-shadow: 0 7px 16px 0 ${props => fade(0.95, darken(0.4, props.theme.colors.gray))}, 0 2px 12px 0 rgba(0, 0, 0, .04);
+  border: 1px solid ${props => darken(0.05, props.theme.colors.gray)};
+  box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.04);
   padding-top: 3.5rem;
   border-radius: 5px;
 `;
@@ -32,7 +32,7 @@ Card.Body = styled.div`
 
 Card.Footer = styled.div`
   padding: 1.3rem 2.8rem;
-  background-color: ${props => props.theme.colors.gray};
+  /* background-color: ${props => props.theme.colors.gray}; */
   border-top: 1px solid ${props => darken(0.04, props.theme.colors.gray)};
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;

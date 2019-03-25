@@ -6,7 +6,7 @@ const LogoWrapper = styled.div`
   text-align: center;
   margin-bottom: 1.8rem;
   img {
-    max-width: 45px;
+    width: 45px;
   }
 `;
 
