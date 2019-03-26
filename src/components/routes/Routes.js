@@ -7,6 +7,7 @@ import Home from 'components/home/Home';
 import NotFound from 'components/notFound/NotFound';
 import Signup from 'components/signup/Signup';
 import Login from 'components/login/Login';
+import ForgotPassword from 'components/password/Forgot';
 import SignupCompany from 'components/companies/NewCompany';
 
 const Routes = () => {
@@ -15,10 +16,11 @@ const Routes = () => {
       <Switch>
         <GuestRoute exact path="/signup" component={Signup} />
         <GuestRoute exact path="/login" component={Login} />
-        <GuestRoute exact path="/password/forgot" component={Login} />
-        <PrivateRoute exact path="/signup/company" component={SignupCompany} />
+        <GuestRoute exact path="/password/forgot" component={ForgotPassword} />
 
         <PrivateRoute exact path="/" component={Home} />
+        <PrivateRoute exact path="/signup/company" component={SignupCompany} />
+
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

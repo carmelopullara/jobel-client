@@ -21,6 +21,14 @@ export default {
     invalidEmail: 'Invalid email',
     passwordChanged: 'Your password has been changed successfully',
   },
+  password: {
+    forgot: {
+      title: 'Recover your password',
+      return: 'Return to Sign in page',
+      button: 'Recover Password',
+      success: 'A password reset link has been sent to your email',
+    },
+  },
   companies: {
     details: 'Company details',
   },
@@ -43,4 +51,5 @@ export default {
   resendEmail: 'Resend the confirmation email',
   emailAlreadyInUse: 'This email address is already in use',
   invalidUrl: 'Invalid URL',
+  emailNotFound: 'No user found with this email address',
 };

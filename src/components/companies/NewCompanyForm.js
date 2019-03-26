@@ -41,7 +41,6 @@ const LoginForm = () => {
         handleBlur,
         handleSubmit,
         isSubmitting,
-        isValid,
       }) => {
         return (
           <>

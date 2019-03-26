@@ -2,7 +2,7 @@
 import { useContext, useEffect } from 'react';
 import { useMutation, useQuery } from 'react-apollo-hooks';
 import { UserContext } from 'context';
-import { GET_CURRENT_USER, LOGIN, SIGNUP } from 'schema/user';
+import { GET_CURRENT_USER, LOGIN, SIGNUP, FORGOT_PASSWORD } from 'schema/user';
 import { useRouter } from 'hooks/common';
 
 export const useCurrentUser = () => {
@@ -77,4 +77,26 @@ export const useSignup = () => {
   };
 
   return submitSignup;
+};
+
+export const useForgotPassword = () => {
+  const mutate = useMutation(FORGOT_PASSWORD);
+
+  const submitForgot = (values, actions) => {
+    return new Promise((resolve, reject) => {
+      const { email } = values;
+
+      mutate({ variables: { email } })
+        .then(() => {
+          actions.setSubmitting(false);
+          resolve();
+        })
+        .catch((error) => {
+          actions.setSubmitting(false);
+          reject(error.graphQLErrors[0].message);
+        });
+    });
+  };
+
+  return submitForgot;
 };

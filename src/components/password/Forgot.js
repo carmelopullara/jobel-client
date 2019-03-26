@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { Flex, Container } from 'styled/layout';
 import { AuthBlock } from 'styled/common';
 import Card from 'styled/card';
-import LoginForm from './LoginForm';
+import ForgotForm from './ForgotForm';
 import Logo from 'components/shared/Logo';
 
-const Login = () => {
+const Forgot = () => {
   const { t } = useTranslation();
 
   return (
@@ -17,17 +17,15 @@ const Login = () => {
           <Logo />
           <Card>
             <Card.Header>
-              <h5>{t('login.title')}</h5>
+              <h5>{t('password.forgot.title')}</h5>
             </Card.Header>
             <Card.Body>
-              <LoginForm />
+              <ForgotForm />
             </Card.Body>
             <Card.Footer>
               <p>
-                {t('login.noAccount')}
-                {' '}
-                <Link to="/signup">
-                  <strong>{t('signup.index')}</strong>
+                <Link to="/login">
+                  <strong>{t('password.forgot.return')}</strong>
                 </Link>
               </p>
             </Card.Footer>
@@ -38,4 +36,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Forgot;

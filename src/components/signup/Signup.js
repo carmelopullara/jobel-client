@@ -17,7 +17,7 @@ const Signup = () => {
           <Logo />
           <Card>
             <Card.Header>
-              <h4>{t('signup.title')}</h4>
+              <h5>{t('signup.title')}</h5>
             </Card.Header>
             <Card.Body>
               <SignupForm />
