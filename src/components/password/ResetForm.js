@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
+import PropTypes from 'prop-types';
 import * as yup from 'yup';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
 import { Alert } from 'styled/common';
@@ -92,6 +93,10 @@ const ResetForm = ({ token }) => {
       }}
     />
   );
+};
+
+ResetForm.propTypes = {
+  token: PropTypes.string.isRequired,
 };
 
 export default ResetForm;
