@@ -28,6 +28,12 @@ export default {
       button: 'Recover Password',
       success: 'A password reset link has been sent to your email',
     },
+    reset: {
+      title: 'Set your new password',
+      button: 'Set New Password',
+      new: 'New password',
+      repeat: 'Repeat password',
+    },
   },
   companies: {
     details: 'Company details',
@@ -39,7 +45,7 @@ export default {
   or: 'Or',
   emailAddress: 'Email Address',
   invalidEmail: 'Invalid email',
-  passwordLength: 'Password must be 6 characters or more',
+  passwordLength: 'Password must be 8 characters or more',
   passwordMismatch: 'Password are not equal',
   required: 'Required',
   requiredEmpty: '',
@@ -52,4 +58,5 @@ export default {
   emailAlreadyInUse: 'This email address is already in use',
   invalidUrl: 'Invalid URL',
   emailNotFound: 'No user found with this email address',
+  invalidResetToken: 'Invalid password reset token',
 };

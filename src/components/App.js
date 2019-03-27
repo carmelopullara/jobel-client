@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import Loading from 'components/shared/Loading';
 import Routes from 'components/routes/Routes';
-import GlobalStyle from 'components/shared/GlobalStyle';
 import { useCurrentUser } from 'hooks/auth';
 import { UserContext } from 'context';
 
@@ -18,10 +17,7 @@ const App = () => {
   }
 
   return (
-    <>
-      <GlobalStyle />
-      <Routes />
-    </>
+    <Routes />
   );
 };
 

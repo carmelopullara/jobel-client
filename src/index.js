@@ -10,6 +10,7 @@ import { UserProvider } from 'context';
 import authReducer from 'reducers/authReducer';
 import App from 'components/App';
 import theme from 'styled/theme';
+import GlobalStyle from 'components/shared/GlobalStyle';
 
 const httpLink = new HttpLink({ uri: 'http://localhost:3001/graphql' });
 
@@ -64,7 +65,10 @@ const Root = () => {
     <UserProvider value={value}>
       <ApolloProvider client={client}>
         <ThemeProvider theme={theme}>
-          <App />
+          <>
+            <GlobalStyle />
+            <App />
+          </>
         </ThemeProvider>
       </ApolloProvider>
     </UserProvider>

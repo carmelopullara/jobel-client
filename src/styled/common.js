@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { transparentize as fade, darken } from 'polished';
+import { transparentize as fade, darken, lighten } from 'polished';
 import { Link } from 'react-router-dom';
 import { getColor } from 'styled/utils';
 import shapes from 'assets/images/sidebar-bg.svg';
@@ -49,8 +49,8 @@ export const AuthFooter = styled.div`
 export const Alert = styled.div`
   display: flex;
   align-items: center;
-  background-color: ${props => fade(0.9, getColor(props))};
-  border: 1px solid ${props => fade(0.87, getColor(props))};
+  background-color: ${props => lighten(0.425, getColor(props))};
+  border: 1px solid ${props => lighten(0.35, getColor(props))};
   border-left-color: ${props => getColor(props)};
   color: ${props => darken(0.1, getColor(props))};
   border-left-width: 3px;
@@ -58,6 +58,7 @@ export const Alert = styled.div`
   border-radius: 3px;
   margin: 1rem 0;
   font-size: 0.95rem;
+  justify-content: ${props => (props.center ? 'center' : '')};
   & > svg {
     color: ${props => darken(0.1, getColor(props))};
     height: 1.2em;

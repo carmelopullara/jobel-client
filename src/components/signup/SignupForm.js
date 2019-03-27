@@ -19,7 +19,7 @@ const validationSchema = yup.object().shape({
   password: yup
     .string()
     .required('requiredEmpty')
-    .min(6, 'passwordLength'),
+    .min(8, 'passwordLength'),
 });
 
 const SignupForm = () => {

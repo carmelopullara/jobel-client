@@ -26,7 +26,6 @@ const ForgotForm = () => {
     <Formik
       initialValues={{
         email: '',
-        password: '',
       }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {

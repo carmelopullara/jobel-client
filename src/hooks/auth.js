@@ -2,7 +2,7 @@
 import { useContext, useEffect } from 'react';
 import { useMutation, useQuery } from 'react-apollo-hooks';
 import { UserContext } from 'context';
-import { GET_CURRENT_USER, LOGIN, SIGNUP, FORGOT_PASSWORD } from 'schema/user';
+import { GET_CURRENT_USER, LOGIN, SIGNUP, FORGOT_PASSWORD, RESET_PASSWORD } from 'schema/user';
 import { useRouter } from 'hooks/common';
 
 export const useCurrentUser = () => {
@@ -99,4 +99,31 @@ export const useForgotPassword = () => {
   };
 
   return submitForgot;
+};
+
+export const useResetPassword = () => {
+  const mutate = useMutation(RESET_PASSWORD);
+  const { dispatch } = useContext(UserContext);
+
+  const submitReset = (passwordToken, { password }, actions) => {
+    return new Promise((resolve, reject) => {
+      mutate({ variables: { passwordToken, password } })
+        .then((result) => {
+          const { data: { resetPassword } } = result;
+          localStorage.setItem('token', resetPassword.token);
+          localStorage.setItem('refreshToken', resetPassword.refreshToken);
+          dispatch({
+            type: 'LOGIN_SUCCESS',
+            user: resetPassword.user,
+          });
+          resolve();
+        })
+        .catch((error) => {
+          actions.setSubmitting(false);
+          reject(error.graphQLErrors[0].message);
+        });
+    });
+  };
+
+  return submitReset;
 };
