@@ -37,6 +37,7 @@ const SignupForm = () => {
       }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
+        setError(null);
         submitSignup(values, actions).catch(e => setError(e));
       }}
       render={({

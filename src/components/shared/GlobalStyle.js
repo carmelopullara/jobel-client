@@ -40,6 +40,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
   }
 
+  ::placeholder{
+    color: ${props => desaturate(0.1, lighten(0.3, props.theme.colors.black))};
+  }
+
   body{
     font-family: 'Calibre', sans-serif;
     font-weight: 400;

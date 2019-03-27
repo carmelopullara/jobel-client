@@ -26,7 +26,7 @@ const NewCompany = () => {
               </>
             </Card.Header>
             <Card.Body>
-              <Alert warning>Awesome! Now tell us about your company.</Alert>
+              <Alert warning center>Awesome! Now tell us about your company.</Alert>
               <NewCompanyForm />
             </Card.Body>
           </Card>

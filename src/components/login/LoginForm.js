@@ -34,6 +34,7 @@ const LoginForm = () => {
       }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
+        setError(null);
         submitLogin(values, actions).catch(e => setError(e));
       }}
       render={({
