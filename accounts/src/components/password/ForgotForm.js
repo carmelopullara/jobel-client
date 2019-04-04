@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
-import { Alert } from '@jobel/ui/common';
-import { Field, Input, Error } from '@jobel/ui/form';
-import { Button } from '@jobel/ui/button';
-import Spinner from '@jobel/ui/spinner';
+import { Alert } from '@jobel/ui';
+import { Field, Input, Error } from '@jobel/ui';
+import { Button } from '@jobel/ui';
+import { Spinner } from '@jobel/ui';
 import { useForgotPassword } from 'hooks/auth';
 import { useTranslation } from 'react-i18next';
 
@@ -45,8 +45,7 @@ const ForgotForm = () => {
         handleBlur,
         handleSubmit,
         isSubmitting,
-      }) => {
-        return (
+      }) => (
           <>
             {error && (
               <Alert danger>
@@ -84,8 +83,7 @@ const ForgotForm = () => {
               </Button>
             </form>
           </>
-        );
-      }}
+        )}
     />
   );
 };

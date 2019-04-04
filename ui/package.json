@@ -1,11 +1,19 @@
 {
   "name": "@jobel/ui",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
+  "scripts": {
+    "watch": "babel src --watch --out-dir dist"
+  },
   "dependencies": {
     "polished": "^3.2.0",
     "react": "^16.8.6",
     "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-react": "^7.0.0"
   }
 }

@@ -8,7 +8,7 @@ import 'i18n';
 import { UserProvider } from 'context';
 import authReducer from 'reducers/authReducer';
 import App from 'components/App';
-import theme from '@jobel/ui/theme';
+import { theme } from '@jobel/ui';
 import GlobalStyle from 'components/shared/GlobalStyle';
 
 const httpLink = new HttpLink({

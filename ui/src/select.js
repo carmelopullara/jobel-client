@@ -23,12 +23,12 @@ const StyledSelect = styled(Input)`
   cursor: pointer;
 `;
 
-// const Select = ({ children, ...rest }) => {
-//   return (
-//     <SelectWrapper>
-//       <StyledSelect as="select" {...rest}>{children}</StyledSelect>
-//     </SelectWrapper>
-//   );
-// };
+const Select = ({ children, ...rest }) => {
+  return (
+    <SelectWrapper>
+      <StyledSelect as="select" {...rest}>{children}</StyledSelect>
+    </SelectWrapper>
+  );
+};
 
-export default StyledSelect;
+export default Select;

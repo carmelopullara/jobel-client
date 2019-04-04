@@ -3,10 +3,10 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
-import { Alert, PasswordLink } from '@jobel/ui/common';
-import { Field, Input, Error } from '@jobel/ui/form';
-import { Button } from '@jobel/ui/button';
-import Spinner from '@jobel/ui/spinner';
+import { Alert, PasswordLink } from '@jobel/ui';
+import { Field, Input, Error } from '@jobel/ui';
+import { Button } from '@jobel/ui';
+import { Spinner } from '@jobel/ui';
 import { useLogin } from 'hooks/auth';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -54,7 +54,7 @@ const LoginForm = ({ mode }) => {
                 <AlertCircle />
                 <span>
                   {t(error)}
-                  { error === 'emailNotVerified' && (
+                  {error === 'emailNotVerified' && (
                     <>
                       <br />
                       <Link to="/resend">{t('resendEmail')}</Link>
@@ -93,9 +93,11 @@ const LoginForm = ({ mode }) => {
                 <Error>{touched.password && t(errors.password)}</Error>
               </Field>
               <Button primary block large disabled={isSubmitting} type="submit">
-                { isSubmitting ? <Spinner white /> : t('login.index') }
+                {isSubmitting ? <Spinner white /> : t('login.index')}
               </Button>
-              <PasswordLink to="/password/forgot">{t('login.forgot')}</PasswordLink>
+              <PasswordLink to="/password/forgot">
+                {t('login.forgot')}
+              </PasswordLink>
             </form>
           </>
         );

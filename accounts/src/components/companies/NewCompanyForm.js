@@ -3,11 +3,11 @@ import { Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
 import * as yup from 'yup';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
-import { Alert } from '@jobel/ui/common';
-import { Field, Input, Error } from '@jobel/ui/form';
-import Select from '@jobel/ui/select';
-import { Button } from '@jobel/ui/button';
-import Spinner from '@jobel/ui/spinner';
+import { Alert } from '@jobel/ui';
+import { Field, Input, Error } from '@jobel/ui';
+import { Select } from '@jobel/ui';
+import { Button } from '@jobel/ui';
+import { Spinner } from '@jobel/ui';
 import { useCompanySignup } from 'hooks/companies';
 import countries from 'utils/countries.json';
 
@@ -89,7 +89,7 @@ const LoginForm = () => {
                   large
                 >
                   <option value="">Country</option>
-                  {countries.map((country) => {
+                  {countries.map(country => {
                     return (
                       <option key={country.code} value={country.code}>
                         {country.name}

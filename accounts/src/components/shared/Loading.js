@@ -1,6 +1,5 @@
 import React from 'react';
-import { Flex } from '@jobel/ui/layout';
-import Spinner from '@jobel/ui/spinner';
+import { Flex, Spinner } from '@jobel/ui';
 
 const Loading = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@jobel/ui/button';
+import { Button } from '@jobel/ui';
 
 const Home = () => {
   return <Button>Home</Button>;

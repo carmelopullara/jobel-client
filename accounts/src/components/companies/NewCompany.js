@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from 'context';
-import { Flex, Container } from '@jobel/ui/layout';
-import { AuthBlock, Alert } from '@jobel/ui/common';
-import Card from '@jobel/ui/card';
+import { Flex, Container, AuthBlock, Alert, Card } from '@jobel/ui';
 import Logo from 'components/shared/Logo';
 import NewCompanyForm from './NewCompanyForm';
 

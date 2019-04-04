@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Flex, Container } from '@jobel/ui/layout';
-import { AuthBlock } from '@jobel/ui/common';
-import Card from '@jobel/ui/card';
+import { Flex, Container } from '@jobel/ui';
+import { AuthBlock } from '@jobel/ui';
+import { Card } from '@jobel/ui';
 import SignupForm from 'components/signup/SignupForm';
 import Logo from 'components/shared/Logo';
 
@@ -24,11 +24,9 @@ const Signup = () => {
             </Card.Body>
             <Card.Footer>
               <p>
-                {t('signup.alreadyDone')}
-                {' '}
+                {t('signup.alreadyDone')}{' '}
                 <Link to="/login">
-                  <strong>{t('login.index')}</strong>
-                  .
+                  <strong>{t('login.index')}</strong>.
                 </Link>
               </p>
             </Card.Footer>

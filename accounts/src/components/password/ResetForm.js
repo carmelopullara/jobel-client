@@ -3,10 +3,10 @@ import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 import * as yup from 'yup';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
-import { Alert } from '@jobel/ui/common';
-import { Field, Input, Error } from '@jobel/ui/form';
-import { Button } from '@jobel/ui/button';
-import Spinner from '@jobel/ui/spinner';
+import { Alert } from '@jobel/ui';
+import { Field, Input, Error } from '@jobel/ui';
+import { Button } from '@jobel/ui';
+import { Spinner } from '@jobel/ui';
 import { useResetPassword } from 'hooks/auth';
 import { useTranslation } from 'react-i18next';
 
