@@ -5,7 +5,7 @@
   ],
   "version": "1.0.0",
   "scripts": {
-    "start": "lerna run start"
+    "start": "lerna run start --scope={@jobel/accounts,@jobel/app}"
   },
   "devDependencies": {
     "lerna": "^3.13.1"

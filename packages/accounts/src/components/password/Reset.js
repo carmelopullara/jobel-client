@@ -2,12 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-apollo-hooks';
 import { useTranslation } from 'react-i18next';
-import { Flex, Container } from '@jobel/ui';
-import { AuthBlock, Alert } from '@jobel/ui';
-import { Card } from '@jobel/ui';
+import { Flex, Container, Loading, AuthBlock, Alert, Card } from '@jobel/ui';
 import { CHECK_TOKEN } from 'schema/user';
-import Loading from 'components/shared/Loading';
-import Logo from 'components/shared/Logo';
+import { Logo } from '@jobel/ui';
 import ResetForm from './ResetForm';
 
 const Reset = ({ match }) => {

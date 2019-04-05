@@ -5,7 +5,7 @@ import { Flex, Container } from '@jobel/ui';
 import { AuthBlock } from '@jobel/ui';
 import { Card } from '@jobel/ui';
 import ForgotForm from './ForgotForm';
-import Logo from 'components/shared/Logo';
+import { Logo } from '@jobel/ui';
 
 const Forgot = () => {
   const { t } = useTranslation();

@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 import { darken, lighten, desaturate } from 'polished';
-import CalibreRegular from 'assets/fonts/Calibre-Regular.woff';
-import CalibreRegular2 from 'assets/fonts/Calibre-Regular.woff2';
-import CalibreMedium from 'assets/fonts/Calibre-Medium.woff';
-import CalibreMedium2 from 'assets/fonts/Calibre-Medium.woff2';
-import CalibreBold from 'assets/fonts/Calibre-Bold.woff';
-import CalibreBold2 from 'assets/fonts/Calibre-Bold.woff2';
+import CalibreRegular from '../assets/fonts/Calibre-Regular.woff';
+import CalibreRegular2 from '../assets/fonts/Calibre-Regular.woff2';
+import CalibreMedium from '../assets/fonts/Calibre-Medium.woff';
+import CalibreMedium2 from '../assets/fonts/Calibre-Medium.woff2';
+import CalibreBold from '../assets/fonts/Calibre-Bold.woff';
+import CalibreBold2 from '../assets/fonts/Calibre-Bold.woff2';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {

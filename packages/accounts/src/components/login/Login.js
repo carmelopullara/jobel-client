@@ -5,7 +5,7 @@ import { Flex, Container } from '@jobel/ui';
 import { AuthBlock } from '@jobel/ui';
 import { Card } from '@jobel/ui';
 import LoginForm from './LoginForm';
-import Logo from 'components/shared/Logo';
+import { Logo } from '@jobel/ui';
 
 const Login = () => {
   const { t } = useTranslation();

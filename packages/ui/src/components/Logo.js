@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LogoImg from 'assets/images/logotype.svg';
+import LogoImg from '../assets/images/logotype.svg';
 
 const LogoWrapper = styled.div`
   text-align: center;

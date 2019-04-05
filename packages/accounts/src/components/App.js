@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Loading from 'components/shared/Loading';
+import {Loading} from '@jobel/ui';
 import Routes from 'components/routes/Routes';
 import { useCurrentUser } from 'hooks/auth';
 import { UserContext } from 'context';

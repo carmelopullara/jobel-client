@@ -1,11 +1,12 @@
 {
   "name": "@jobel/ui",
   "version": "1.0.0",
+  "private": true,
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "babel src --watch --out-dir dist",
-    "build": "babel src --out-dir dist"
+    "start": "babel src --watch --out-dir dist --copy-files",
+    "build": "babel src --out-dir dist --copy-files"
   },
   "dependencies": {
     "polished": "^3.2.0",

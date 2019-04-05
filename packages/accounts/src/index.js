@@ -8,8 +8,7 @@ import 'i18n';
 import { UserProvider } from 'context';
 import authReducer from 'reducers/authReducer';
 import App from 'components/App';
-import { theme } from '@jobel/ui';
-import GlobalStyle from 'components/shared/GlobalStyle';
+import { GlobalStyle, theme } from '@jobel/ui';
 
 const httpLink = new HttpLink({
   uri: 'http://localhost:3001/graphql',

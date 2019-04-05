@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Spinner } from '@jobel/ui';
+import { Flex, Spinner } from '../index';
 
 const Loading = () => {
   return (
