@@ -1,8 +1,14 @@
 {
   "private": true,
   "workspaces": [
-    "accounts",
-    "ui"
+    "packages/*"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "scripts": {
+    "start": "lerna run start"
+  },
+  "devDependencies": {
+    "lerna": "^3.13.1"
+  },
+  "name": "client"
 }

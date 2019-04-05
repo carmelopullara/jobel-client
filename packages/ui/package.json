@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "watch": "babel src --watch --out-dir dist"
+    "start": "babel src --watch --out-dir dist",
+    "build": "babel src --out-dir dist"
   },
   "dependencies": {
     "polished": "^3.2.0",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import BrowserRouter from 'components/routes/CustomRouter';
 import GuestRoute from 'components/routes/GuestRoute';
 import PrivateRoute from 'components/routes/PrivateRoute';
@@ -18,7 +18,7 @@ const Routes = () => {
       <Switch>
         <GuestRoute exact path="/signup" component={Signup} />
         <GuestRoute exact path="/login" component={Login} />
-        <GuestRoute exact path="/candidate/login" component={CandidateLogin} />
+        <GuestRoute exact path="/job-seeker/login" component={CandidateLogin} />
         <GuestRoute exact path="/password/forgot" component={ForgotPassword} />
         <GuestRoute exact path="/password/reset/:token" component={ResetPassword} />
 
