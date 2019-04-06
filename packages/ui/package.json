@@ -1,0 +1,21 @@
+{
+  "name": "@jobel/ui",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel src --watch --out-dir dist --copy-files",
+    "build": "babel src --out-dir dist --copy-files"
+  },
+  "dependencies": {
+    "polished": "^3.2.0",
+    "react": "^16.8.6",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
