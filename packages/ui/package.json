@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "babel src --watch --out-dir dist --copy-files",
+    "watch": "babel src --watch --out-dir dist --copy-files",
     "build": "babel src --out-dir dist --copy-files"
   },
   "dependencies": {

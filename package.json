@@ -5,9 +5,14 @@
   ],
   "version": "1.0.0",
   "scripts": {
-    "start": "lerna run start --scope={@jobel/accounts,@jobel/app}"
+    "start:accounts": "cd packages/accounts && yarn start",
+    "start:app": "cd packages/app && yarn start",
+    "watch": "cd packages/ui && yarn watch",
+    "start": "concurrently \"yarn start:accounts\" \"yarn start:app\" \"yarn watch\"",
+    "build": "lerna run build"
   },
   "devDependencies": {
+    "concurrently": "^4.1.0",
     "lerna": "^3.13.1"
   },
   "name": "client"
