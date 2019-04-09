@@ -5,13 +5,13 @@ import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-boost';
 import { ThemeProvider } from 'styled-components';
 import 'normalize.css/normalize.css';
 import 'i18n';
-import { UserProvider } from 'context';
+import { UserProvider, SERVER_URL } from './context';
 import authReducer from 'reducers/authReducer';
 import App from 'components/App';
 import { GlobalStyle, theme } from '@jobel/ui';
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: SERVER_URL,
   credentials: 'include',
 });
 

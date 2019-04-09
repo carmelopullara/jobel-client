@@ -1,8 +1,14 @@
-import React from 'react';
-import { Button } from '@jobel/ui';
+import { useContext } from 'react';
+import { UserContext, APP_URL, PORTAL_URL } from 'context';
 
 const Home = () => {
-  return <Button>Home</Button>;
+  const { state: { currentUser } } = useContext(UserContext);
+  if (currentUser.type === 'JobSeeker') {
+    window.location = PORTAL_URL;
+  } else {
+    window.location = APP_URL;
+  }
+  return null;
 };
 
 export default Home;
