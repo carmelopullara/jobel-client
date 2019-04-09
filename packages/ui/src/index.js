@@ -13,3 +13,4 @@ export { default as theme } from './elements/theme';
 export { default as Logo } from './components/Logo';
 export { default as Loading } from './components/Loading';
 export { default as GlobalStyle } from './components/GlobalStyle';
+export { ThemeProvider } from 'styled-components';

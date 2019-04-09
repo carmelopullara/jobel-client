@@ -2,13 +2,12 @@ import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo-hooks';
 import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-boost';
-import { ThemeProvider } from 'styled-components';
 import 'normalize.css/normalize.css';
 import 'i18n';
 import { UserProvider, SERVER_URL } from './context';
 import authReducer from 'reducers/authReducer';
 import App from 'components/App';
-import { GlobalStyle, theme } from '@jobel/ui';
+import { ThemeProvider, GlobalStyle, theme } from '@jobel/ui';
 
 const httpLink = new HttpLink({
   uri: SERVER_URL,
