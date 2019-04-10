@@ -1,16 +1,15 @@
 export default {
   signup: {
-    index: 'Sign up',
+    index: 'Sign Up',
     title: 'Start Your Free Trial',
-    google: 'Sign up with Google',
     alreadyDone: 'Already have an account?',
     createAccount: 'Create account',
     emailAlreadyInUse: 'The email address is already in use',
     weakPassword: 'Password should be at least 6 characters',
   },
   login: {
-    index: 'Sign in',
-    title: 'Sign in to Jobel',
+    index: 'Sign In',
+    title: 'Sign In to Jobel',
     noAccount: 'Don\'t have an account?',
     forgot: 'Forgot your password?',
     google: 'Sign in with Google',
@@ -23,12 +22,14 @@ export default {
   },
   password: {
     forgot: {
+      index: 'Forgot password',
       title: 'Recover your password',
       return: 'Return to Sign in page',
       button: 'Recover Password',
       success: 'A password reset link has been sent to your email',
     },
     reset: {
+      index: 'Reset password',
       title: 'Set your new password',
       button: 'Set New Password',
       new: 'New password',
@@ -41,6 +42,9 @@ export default {
   jobSeeker: {
     login: {
       title: 'Log in to your Job Seeker account',
+    },
+    signup: {
+      title: 'Create your Job Seeker account',
     },
   },
   invalidCredentials: 'The email address or password you entered is incorrect',

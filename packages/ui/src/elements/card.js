@@ -5,9 +5,8 @@ import { Alert } from './common';
 const Card = styled.div`
   position: relative;
   background-color: #fff;
-  border: 1px solid ${props => darken(0.05, props.theme.colors.gray)};
-  box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.04);
-  padding-top: 3.5rem;
+  box-shadow: 0 0 0 1px rgba(63,63,68,0.05), 0 1px 4px 0 rgba(63,63,68,0.15);
+  padding-top: 2.8rem;
   border-radius: 5px;
 `;
 

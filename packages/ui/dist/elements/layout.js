@@ -15,6 +15,10 @@ export const Box = styled.div`
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+  & > ${Flex} {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
   ${props => props.col && `
     flex: 0 0 ${100 / 12 * props.col}%;
     max-width: ${100 / 12 * props.col}%;

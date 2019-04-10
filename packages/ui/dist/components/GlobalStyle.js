@@ -61,6 +61,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  b, strong {
+    font-weight: 500;
+  }
+
   p{
     margin-top: 0;
     margin-bottom: 1rem;

@@ -3,7 +3,7 @@ import { transparentize as fade, darken, lighten } from 'polished';
 import { Link } from 'react-router-dom';
 import { getColor } from './utils';
 export const AuthBlock = styled.div`
-  width: ${props => props.small ? '380px' : '450px'};
+  width: ${props => props.small ? '400px' : '450px'};
   max-width: 100%;
   margin: auto;
   > svg {
@@ -14,7 +14,7 @@ export const AuthBlock = styled.div`
   }
 `;
 export const Title = styled.div`
-  text-align: center;
+  text-align: ${props => props.align || 'center'};
   margin-bottom: 2rem;
 `;
 export const Alert = styled.div`
@@ -47,8 +47,8 @@ export const Alert = styled.div`
 `;
 export const PasswordLink = styled(Link)`
   display: block;
-  text-align: center;
+  text-align: ${props => props.left ? 'left' : 'center'};
   font-weight: 500;
   font-size: 15px;
-  margin-top: 1rem;
+  margin: 1rem 0;
 `;

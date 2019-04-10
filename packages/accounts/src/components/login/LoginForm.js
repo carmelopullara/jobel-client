@@ -3,10 +3,9 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
-import { Alert, PasswordLink } from '@jobel/ui';
-import { Field, Input, Error } from '@jobel/ui';
-import { Button } from '@jobel/ui';
-import { Spinner } from '@jobel/ui';
+import {
+  Alert, PasswordLink, Field, Input, Error, Button, Spinner,
+} from '@jobel/ui';
 import { useLogin } from 'hooks/auth';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -26,6 +25,7 @@ const LoginForm = ({ mode }) => {
   const [error, setError] = useState(null);
   const submitLogin = useLogin();
   const { t } = useTranslation();
+  const isJobSeeker = mode === 'JobSeeker';
 
   return (
     <Formik
@@ -92,12 +92,14 @@ const LoginForm = ({ mode }) => {
                 />
                 <Error>{touched.password && t(errors.password)}</Error>
               </Field>
-              <Button primary block large disabled={isSubmitting} type="submit">
-                {isSubmitting ? <Spinner white /> : t('login.index')}
-              </Button>
-              <PasswordLink to="/password/forgot">
-                {t('login.forgot')}
-              </PasswordLink>
+              <Field wrap={isJobSeeker ? 1 : 0}>
+                <Button primary large block={mode === 'Customer'} disabled={isSubmitting} type="submit">
+                  {isSubmitting ? <Spinner white /> : t('login.index')}
+                </Button>
+                <PasswordLink to="/password/forgot" left={isJobSeeker ? 1 : 0}>
+                  {t('login.forgot')}
+                </PasswordLink>
+              </Field>
             </form>
           </>
         );

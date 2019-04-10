@@ -6,14 +6,14 @@ import 'styled-components/macro';
 import {
   Flex, Box, AuthBlock, Title, Pattern, Logo,
 } from '@jobel/ui';
-import LoginForm from './LoginForm';
+import SignupForm from './SignupForm';
 import Layout from 'components/Layout';
 
 const Login = () => {
   const { t } = useTranslation();
 
   return (
-    <Layout title={t('login.index')}>
+    <Layout title={t('signup.index')}>
       <Flex>
         <Box lg="6">
           <Pattern />
@@ -23,18 +23,19 @@ const Login = () => {
             <AuthBlock small>
               <Logo left />
               <Title align="left">
-                <h5>{t('jobSeeker.login.title')}</h5>
+                <h5>{t('jobSeeker.signup.title')}</h5>
               </Title>
-              <LoginForm mode="JobSeeker" align="left" />
+              <SignupForm mode="JobSeeker" align="left" />
               <p
                 css={`
                   margin-top: 2rem;
                 `}
               >
-                {t('login.noAccount')}
+                {t('signup.alreadyDone')}
                 {' '}
-                <Link to="/candidate/signup">
-                  <strong>{t('signup.index')}</strong>
+                <Link to="/candidate/login">
+                  <strong>{t('login.index')}</strong>
+                  .
                 </Link>
               </p>
             </AuthBlock>

@@ -7,7 +7,7 @@ export const Link = styled.a`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 10px 14px;
+  padding: 0 1.6rem;
   height: ${props => (props.large ? '48px' : '38px')};
   width: ${props => (props.block ? '100%' : '')};
   color: #fff;

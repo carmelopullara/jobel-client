@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import PropTypes from 'prop-types';
 import AlertCircle from 'react-feather/dist/icons/alert-circle';
-import { Alert } from '@jobel/ui';
-import { Field, Input, Error, DoubleField } from '@jobel/ui';
-import { Button } from '@jobel/ui';
-import { Spinner } from '@jobel/ui';
+import {
+  Alert, Field, Input, Error, DoubleField, Button, Spinner,
+} from '@jobel/ui';
 import { useSignup } from 'hooks/auth';
 import { useTranslation } from 'react-i18next';
 
@@ -22,10 +22,11 @@ const validationSchema = yup.object().shape({
     .min(8, 'passwordLength'),
 });
 
-const SignupForm = () => {
+const SignupForm = ({ mode }) => {
   const [error, setError] = useState(null);
   const submitSignup = useSignup();
   const { t } = useTranslation();
+  const buttonText = (mode === 'JobSeeker') ? t('signup.createAccount') : t('getStartedFree');
 
   return (
     <Formik
@@ -116,7 +117,7 @@ const SignupForm = () => {
                 <Error>{touched.password && t(errors.password)}</Error>
               </Field>
               <Button primary block large disabled={isSubmitting} type="submit">
-                {isSubmitting ? <Spinner white /> : t('getStartedFree')}
+                {isSubmitting ? <Spinner white /> : buttonText}
               </Button>
             </form>
           </>
@@ -124,6 +125,14 @@ const SignupForm = () => {
       }}
     />
   );
+};
+
+SignupForm.propTypes = {
+  mode: PropTypes.oneOf(['JobSeeker', 'Customer']),
+};
+
+SignupForm.defaultProps = {
+  mode: 'Customer',
 };
 
 export default SignupForm;

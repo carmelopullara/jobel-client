@@ -1,9 +1,8 @@
 /* eslint-disable object-curly-newline */
 import { useContext, useEffect } from 'react';
 import { useMutation, useQuery } from 'react-apollo-hooks';
-import { UserContext } from 'context';
+import { UserContext, PORTAL_URL, APP_URL } from 'context';
 import { GET_CURRENT_USER, LOGIN, SIGNUP, FORGOT_PASSWORD, RESET_PASSWORD } from 'schema/user';
-import { useRouter } from 'hooks/common';
 
 export const useCurrentUser = () => {
   const { data, error, loading } = useQuery(GET_CURRENT_USER);
@@ -37,12 +36,17 @@ export const useLogin = () => {
       const { email, password } = values;
       mutate({ variables: { email, password, type } })
         .then((result) => {
-          const { data: { signIn } } = result;
+          const { data: { signIn: { user } } } = result;
           dispatch({
             type: 'LOGIN_SUCCESS',
-            user: signIn.user,
+            user,
           });
-          resolve({ ...signIn.user });
+          if (user.type === 'JobSeeker') {
+            window.location = PORTAL_URL;
+          } else {
+            window.location = APP_URL;
+          }
+          resolve();
         })
         .catch((error) => {
           actions.setSubmitting(false);
@@ -57,7 +61,6 @@ export const useLogin = () => {
 export const useSignup = () => {
   const mutate = useMutation(SIGNUP);
   const submitLogin = useLogin();
-  const { history } = useRouter();
 
   const submitSignup = (values, actions, type) => {
     return new Promise((resolve, reject) => {
@@ -65,13 +68,7 @@ export const useSignup = () => {
 
       mutate({ variables: { firstName, lastName, email, password, type } })
         .then(() => {
-          submitLogin({ email, password }, values).then((user) => {
-            if (user.type === 'JobSeeker') {
-              history.push('/resume');
-            } else {
-              history.push('/signup/company');
-            }
-          });
+          submitLogin({ email, password }, values);
         })
         .catch((error) => {
           actions.setSubmitting(false);

@@ -1,9 +1,20 @@
 import styled from 'styled-components';
 import { transparentize as fade, darken, lighten } from 'polished';
+import { PasswordLink } from './common';
 
 export const Field = styled.div`
   position: relative;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.3rem;
+  ${props => props.wrap && `
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    & > ${PasswordLink} {
+      margin: 0;
+      display: inline-block;
+    }
+  `}
   &:last-child {
     margin-bottom: 0;
   }
