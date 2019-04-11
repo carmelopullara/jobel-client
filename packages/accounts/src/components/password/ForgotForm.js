@@ -83,7 +83,7 @@ const ForgotForm = () => {
               </Button>
             </form>
           </>
-        )}
+      )}
     />
   );
 };

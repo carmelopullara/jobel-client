@@ -32,7 +32,7 @@ Card.Body = styled.div`
 Card.Footer = styled.div`
   padding: 1.3rem 2.8rem;
   /* background-color: ${props => lighten(0.01, props.theme.colors.gray)}; */
-  border-top: 1px solid ${props => darken(0.04, props.theme.colors.gray)};
+  border-top: 1px solid ${props => lighten(0.02, props.theme.colors.border)};
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   text-align: center;

@@ -8,7 +8,6 @@ export const Field = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    align-items: center;
     & > ${PasswordLink} {
       margin: 0;
       display: inline-block;
@@ -39,13 +38,13 @@ export const Input = styled.input`
   height: ${props => props.large ? '48px' : '38px'};
   border-width: 1px;
   border-style: solid;
-  border-color: ${props => props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.1, props.theme.colors.gray)};
+  border-color: ${props => props.hasError ? fade(0.5, props.theme.colors.danger) : props.theme.colors.border};
   border-radius: 3px;
   width: 100%;
   transition: all .3s ease;
   outline: none;
   &:hover{
-    border-color: ${props => props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.15, props.theme.colors.gray)};
+    border-color: ${props => props.hasError ? fade(0.5, props.theme.colors.danger) : darken(0.05, props.theme.colors.border)};
   }
   &:focus{
     box-shadow: 0 0 0 2px ${props => fade(0.75, props.theme.colors.primary)};

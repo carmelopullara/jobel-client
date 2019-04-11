@@ -24,7 +24,7 @@ export default {
     forgot: {
       index: 'Forgot password',
       title: 'Recover your password',
-      return: 'Return to Sign in page',
+      return: 'Return to Sign In page',
       button: 'Recover Password',
       success: 'A password reset link has been sent to your email',
     },

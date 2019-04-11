@@ -4,7 +4,7 @@ import { UserContext } from 'context';
 
 const PrivateRoute = (props) => {
   const { state } = useContext(UserContext);
-  return state.currentUser ? <Route {...props} /> : <Redirect to="/login" />;
+  return state.currentUser ? <Route {...props} /> : <Redirect to="/candidate/login" />;
 };
 
 export default PrivateRoute;

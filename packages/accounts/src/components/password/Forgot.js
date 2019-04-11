@@ -25,7 +25,7 @@ const Forgot = () => {
               </Card.Body>
               <Card.Footer>
                 <p>
-                  <Link to="/login">
+                  <Link to="/candidate/login">
                     <strong>{t('password.forgot.return')}</strong>
                   </Link>
                 </p>
