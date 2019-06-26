@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Calibre';
+  font-display: auto;
+  src: url('./fonts/Calibre-Regular.woff');
+  src: url('./fonts/Calibre-Regular.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  font-display: auto;
+  src: url('./fonts/Calibre-Medium.woff');
+  src: url('./fonts/Calibre-Medium.woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  font-display: auto;
+  src: url('./fonts/Calibre-Bold.woff');
+  src: url('./fonts/Calibre-Bold.woff2');
+  font-weight: 700;
+}

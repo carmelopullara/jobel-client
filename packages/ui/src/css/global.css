@@ -1,0 +1,15 @@
+@import 'fonts.css';
+
+:root {
+  --primary: #08c;
+  --font: 'Calibre', sans-serif;
+}
+
+:global(html) {
+  font-size: 16px;
+}
+
+:global(body) {
+  font-family: var(--font);
+  color: color-mod(var(--primary) shade(40%));
+}

@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Calibre';
+  font-display: auto;
+  src: url('./fonts/Calibre-Regular.woff');
+  src: url('./fonts/Calibre-Regular.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  font-display: auto;
+  src: url('./fonts/Calibre-Medium.woff');
+  src: url('./fonts/Calibre-Medium.woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  font-display: auto;
+  src: url('./fonts/Calibre-Bold.woff');
+  src: url('./fonts/Calibre-Bold.woff2');
+  font-weight: 700;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Calibre', sans-serif;
+  color: rgb(0, 82, 122);
+}
+
+.button__1YfrP {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Calibre', sans-serif
+}
+.button__1YfrP:hover {
+    color: rgb(0, 82, 122);
+  }
+
+.alert__A-4Os {
+  display: block;
+}
