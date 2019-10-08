@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -c -w"
+    "watch": "rollup -cw"
   },
   "dependencies": {
     "classnames": "^2.2.6",

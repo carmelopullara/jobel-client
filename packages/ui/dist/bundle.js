@@ -9,7 +9,7 @@ var React = _interopDefault(require('react'));
 var style = {"button":"button__1YfrP"};
 
 const Button = () => {
-  return React.createElement("div", {
+  return React.createElement("button", {
     className: style.button
   }, "Hellone");
 };

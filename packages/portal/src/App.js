@@ -1,7 +1,8 @@
 import React from 'react';
+import { Camera } from 'react-feather';
 
 const App = () => (
-  <p>Job seekers</p>
+  <Camera />
 );
 
 export default App;

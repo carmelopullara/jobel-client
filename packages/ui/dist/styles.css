@@ -27,19 +27,13 @@ html {
 }
 
 body {
-  font-family: 'Calibre', sans-serif;
+  font-family: 'Arial', sans-serif;
   color: rgb(0, 82, 122);
 }
 
 .button__1YfrP {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: 'Calibre', sans-serif
+  display: block;  
 }
-.button__1YfrP:hover {
-    color: rgb(0, 82, 122);
-  }
 
 .alert__A-4Os {
   display: block;

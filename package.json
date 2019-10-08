@@ -8,8 +8,8 @@
     "start:accounts": "cd packages/accounts && yarn start",
     "start:app": "cd packages/app && yarn start",
     "start:portal": "cd packages/portal && yarn start",
-    "watch": "cd packages/ui && yarn start",
-    "start": "concurrently \"yarn start:accounts\" \"yarn start:app\" \"yarn start:portal\" \"yarn watch\"",
+    "watch": "cd packages/ui && yarn watch",
+    "start": "concurrently \"yarn start:app\" \"yarn watch\"",
     "build": "lerna run build"
   },
   "devDependencies": {

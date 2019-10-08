@@ -2,7 +2,7 @@
 
 :root {
   --primary: #08c;
-  --font: 'Calibre', sans-serif;
+  --font: 'Arial', sans-serif;
 }
 
 :global(html) {
